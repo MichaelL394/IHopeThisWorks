@@ -26,5 +26,8 @@ public class SingleViewActivity extends AppCompatActivity {
         TextView tv2 = (TextView) findViewById(R.id.text2);
         tv2.setText(imageAdapter.three[position]);
 
+        TextView header = (TextView) findViewById(R.id.headerTextSingle);
+        header.setText(imageAdapter.three[position]);
+
     }
 }
