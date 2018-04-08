@@ -14,6 +14,6 @@
         android:text="Hello"
         android:textSize="40dp"
         android:gravity="center"
-        android:id="@+id/headerText"/>
+        android:id="@+id/headerTextStart"/>
 
 </android.support.v7.widget.Toolbar>
