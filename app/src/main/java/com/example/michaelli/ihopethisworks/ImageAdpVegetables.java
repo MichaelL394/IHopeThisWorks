@@ -2,19 +2,17 @@ package com.example.michaelli.ihopethisworks;
 
 
 import android.content.Context;
-
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-public class ImageAdapter extends BaseAdapter {
+public class ImageAdpVegetables extends BaseAdapter {
     private Context mContext;
 
     // Constructor
-    public ImageAdapter(Context c) {
+    public ImageAdpVegetables(Context c) {
         mContext = c;
     }
 
@@ -52,8 +50,8 @@ public class ImageAdapter extends BaseAdapter {
     // Keep all Images in array
     public Integer[] mThumbIds = {
             R.drawable.a, R.drawable.b,
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
+            R.drawable.b, R.drawable.d,
+            R.drawable.sample_4, R.drawable.sample_0,
             R.drawable.sample_6, R.drawable.sample_7,
             R.drawable.sample_0, R.drawable.sample_1,
             R.drawable.sample_2, R.drawable.sample_3,
@@ -65,20 +63,6 @@ public class ImageAdapter extends BaseAdapter {
             R.drawable.sample_6, R.drawable.sample_7
     };
 
-    public Integer[] vegetables = {
-            R.drawable.a, R.drawable.b,
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7,
-            R.drawable.sample_0, R.drawable.sample_1,
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7,
-            R.drawable.sample_0, R.drawable.sample_1,
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7
-    };
 
 
     public String[] two = {

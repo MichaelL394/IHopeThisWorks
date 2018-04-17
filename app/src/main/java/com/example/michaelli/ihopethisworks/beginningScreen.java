@@ -9,7 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-public class begginingScreen extends AppCompatActivity {
+public class beginningScreen extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
@@ -33,11 +33,21 @@ public class begginingScreen extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
-    /** Called when the user taps the Send button */
+
+    /** goes to meats and beans section */
     public void goToMeatsAndBeans(View view) {
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, meatsForNow.class);
         startActivity(i);
     }
+
+    /** goes to vegetable section */
+    public void vegetable(View view) {
+        Intent i = new Intent(this, vegetable.class);
+        startActivity(i);
+    }
+
+
+    //below is for pullout navigation menu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (mToggle.onOptionsItemSelected(item)){
