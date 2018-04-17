@@ -46,6 +46,27 @@ public class beginningScreen extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void dairy(View view) {
+        Intent i = new Intent(this, vegetable.class);
+        startActivity(i);
+    }
+
+    public void grains(View view) {
+        Intent i = new Intent(this, vegetable.class);
+        startActivity(i);
+    }
+
+    public void fruits(View view) {
+        Intent i = new Intent(this, vegetable.class);
+        startActivity(i);
+    }
+
+    public void other(View view) {
+        Intent i = new Intent(this, vegetable.class);
+        startActivity(i);
+    }
+
+
 
     //below is for pullout navigation menu
     @Override

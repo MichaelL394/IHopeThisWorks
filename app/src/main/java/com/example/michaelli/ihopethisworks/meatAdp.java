@@ -10,11 +10,13 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-public class ImageAdapter extends BaseAdapter {
+import com.example.michaelli.ihopethisworks.R;
+
+public class meatAdp extends BaseAdapter {
     private Context mContext;
 
     // Constructor
-    public ImageAdapter(Context c) {
+    public meatAdp(Context c) {
         mContext = c;
     }
 

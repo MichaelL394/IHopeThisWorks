@@ -28,7 +28,7 @@ public class meatsForNow extends AppCompatActivity {
         setContentView(R.layout.grid_view);
 
         GridView gridview = (GridView) findViewById(R.id.gridview);
-        gridview.setAdapter(new ImageAdapter(this));
+        gridview.setAdapter(new meatAdp(this));
 
         gridview.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent,

@@ -31,13 +31,25 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
+        android:orientation="vertical"
         >
         <ImageButton
             android:layout_width="150dp"
             android:layout_height="80dp"
             android:onClick="vegetable"
-
-
+            />
+        <ImageButton
+            android:background="@drawable/a"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:onClick="fruits"
+            />
+        <ImageButton
+            android:background="@drawable/a"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:onClick="other"
+            android:contentDescription="dog"
             />
     </LinearLayout>
 
@@ -46,6 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
+        android:orientation="vertical"
         >
         <ImageButton
             android:background="@drawable/a"
@@ -53,6 +66,19 @@
             android:layout_height="80dp"
             android:onClick="goToMeatsAndBeans"
             />
+        <ImageButton
+            android:background="@drawable/a"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:onClick="grains"
+            />
+        <ImageButton
+        android:background="@drawable/a"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:onClick="dairy"
+            />
+
     </LinearLayout>
 
 

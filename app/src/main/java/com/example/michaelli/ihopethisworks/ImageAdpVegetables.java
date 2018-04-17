@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
+import com.example.michaelli.ihopethisworks.R;
+
 public class ImageAdpVegetables extends BaseAdapter {
     private Context mContext;
 
