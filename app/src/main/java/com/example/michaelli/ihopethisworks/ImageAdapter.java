@@ -37,7 +37,7 @@ public class ImageAdapter extends BaseAdapter {
 
         if (convertView == null) {
             imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(300, 300));
+            imageView.setLayoutParams(new GridView.LayoutParams(375, 375));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setPadding(8, 8, 8, 8);
         }
@@ -51,7 +51,11 @@ public class ImageAdapter extends BaseAdapter {
 
     // Keep all Images in array
     public Integer[] mThumbIds = {
-            R.drawable.a, R.drawable.b,
+            R.drawable.pineapples,
+            R.drawable.oranges, R.drawable.pineapples,
+            R.drawable.eggs, R.drawable.apple,
+            R.drawable.tomatoes, R.drawable.watermelon,
+            R.drawable.bannana,
             R.drawable.sample_2, R.drawable.sample_3,
             R.drawable.sample_4, R.drawable.sample_5,
             R.drawable.sample_6, R.drawable.sample_7,
