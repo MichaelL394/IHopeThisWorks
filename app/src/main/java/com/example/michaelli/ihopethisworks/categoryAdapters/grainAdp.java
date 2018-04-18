@@ -1,20 +1,20 @@
-package com.example.michaelli.ihopethisworks;
+package com.example.michaelli.ihopethisworks.categoryAdapters;
 
 
 import android.content.Context;
-
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-public class ImageAdapter extends BaseAdapter {
+import com.example.michaelli.ihopethisworks.R;
+
+public class grainAdp extends BaseAdapter {
     private Context mContext;
 
     // Constructor
-    public ImageAdapter(Context c) {
+    public grainAdp(Context c) {
         mContext = c;
     }
 
@@ -37,7 +37,7 @@ public class ImageAdapter extends BaseAdapter {
 
         if (convertView == null) {
             imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(375, 375));
+            imageView.setLayoutParams(new GridView.LayoutParams(300, 300));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setPadding(8, 8, 8, 8);
         }
@@ -51,11 +51,7 @@ public class ImageAdapter extends BaseAdapter {
 
     // Keep all Images in array
     public Integer[] mThumbIds = {
-            R.drawable.pineapples,
-            R.drawable.oranges, R.drawable.pineapples,
-            R.drawable.eggs, R.drawable.apple,
-            R.drawable.tomatoes, R.drawable.watermelon,
-            R.drawable.bannana,
+            R.drawable.a, R.drawable.b,
             R.drawable.sample_2, R.drawable.sample_3,
             R.drawable.sample_4, R.drawable.sample_5,
             R.drawable.sample_6, R.drawable.sample_7,

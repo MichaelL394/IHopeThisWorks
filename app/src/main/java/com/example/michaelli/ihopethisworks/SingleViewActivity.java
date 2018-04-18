@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.michaelli.ihopethisworks.categoryAdapters.meatAdp;
+
 public class SingleViewActivity extends AppCompatActivity {
 
     @Override
@@ -15,19 +17,19 @@ public class SingleViewActivity extends AppCompatActivity {
         Intent i = getIntent();
         // Selected image id
         int position = i.getExtras().getInt("id");
-        ImageAdapter imageAdapter = new ImageAdapter(this);
+        meatAdp meatAdp = new meatAdp(this);
 
         ImageView imageView = (ImageView) findViewById(R.id.SingleView);
-        imageView.setImageResource(imageAdapter.mThumbIds[position]);
+        imageView.setImageResource(meatAdp.mThumbIds[position]);
 
         TextView tv = (TextView) findViewById(R.id.text);
-        tv.setText(imageAdapter.two[position]);
+        tv.setText(meatAdp.two[position]);
 
         TextView tv2 = (TextView) findViewById(R.id.text2);
-        tv2.setText(imageAdapter.three[position]);
+        tv2.setText(meatAdp.three[position]);
 
         TextView header = (TextView) findViewById(R.id.headerTextSingle);
-        header.setText(imageAdapter.three[position]);
+        header.setText(meatAdp.three[position]);
 
     }
 }

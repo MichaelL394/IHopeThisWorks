@@ -16,6 +16,7 @@ public class beginningScreen extends AppCompatActivity {
 
     private Toolbar mToolBar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,15 +37,46 @@ public class beginningScreen extends AppCompatActivity {
 
     /** goes to meats and beans section */
     public void goToMeatsAndBeans(View view) {
-        Intent i = new Intent(this, meatsForNow.class);
+        Intent i = new Intent(this, generalGrid.class);
+        String strName = "meats and beans";
+        i.putExtra("STRING_SEND", strName);
+        i.putExtra("foodType", 1);
+        startActivity(i);
+
+    }
+
+    public void fruits(View view) {
+        Intent i = new Intent(this, generalGrid.class);
+        String strName = "Fruits";
+        i.putExtra("STRING_SEND", strName);
+        i.putExtra("foodType", 2);
         startActivity(i);
     }
 
-    /** goes to vegetable section */
+    /** goes to vegetables section */
     public void vegetable(View view) {
-        Intent i = new Intent(this, vegetable.class);
+        Intent i = new Intent(this, generalGrid.class);
+        String strName = "vegetables";
+        i.putExtra("STRING_SEND", strName);
+        i.putExtra("foodType", 3);
         startActivity(i);
     }
+
+    public void dairy(View view) {
+        Intent i = new Intent(this, generalGrid.class);
+        startActivity(i);
+    }
+
+    public void grains(View view) {
+        Intent i = new Intent(this, generalGrid.class);
+        startActivity(i);
+    }
+
+    public void other(View view) {
+        Intent i = new Intent(this, generalGrid.class);
+        startActivity(i);
+    }
+
 
 
     //below is for pullout navigation menu

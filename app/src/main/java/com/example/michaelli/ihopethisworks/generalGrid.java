@@ -14,8 +14,18 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.support.v7.widget.Toolbar;
+import android.widget.TextView;
 
-public class meatsForNow extends AppCompatActivity {
+import com.example.michaelli.ihopethisworks.categoryAdapters.dairyAdp;
+import com.example.michaelli.ihopethisworks.categoryAdapters.fruitAdp;
+import com.example.michaelli.ihopethisworks.categoryAdapters.grainAdp;
+import com.example.michaelli.ihopethisworks.categoryAdapters.meatAdp;
+import com.example.michaelli.ihopethisworks.categoryAdapters.otherAdp;
+import com.example.michaelli.ihopethisworks.categoryAdapters.vegetablesAdp;
+
+import org.w3c.dom.Text;
+
+public class generalGrid extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
@@ -28,7 +38,34 @@ public class meatsForNow extends AppCompatActivity {
         setContentView(R.layout.grid_view);
 
         GridView gridview = (GridView) findViewById(R.id.gridview);
-        gridview.setAdapter(new ImageAdapter(this));
+
+        Intent retrieve = getIntent();
+        int foodCategory = retrieve.getExtras().getInt("foodType");
+
+        TextView header = findViewById(R.id.headerTextStart);
+
+        switch (foodCategory) {
+            case 1:  gridview.setAdapter(new meatAdp(this));
+                        header.setText("Meat");
+                break;
+            case 2:  gridview.setAdapter(new fruitAdp(this));
+                        header.setText("Fruit");
+                break;
+            case 3:  gridview.setAdapter(new dairyAdp(this));
+                        header.setText("Dairy");
+                break;
+            case 4:  gridview.setAdapter(new vegetablesAdp(this));
+                        header.setText("Vegetables");
+                break;
+            case 5:  gridview.setAdapter(new otherAdp(this));
+                        header.setText("Other");
+                break;
+            case 6:  gridview.setAdapter(new grainAdp(this));
+                        header.setText("Grain");
+                break;
+            default: gridview.setAdapter(new meatAdp(this));
+                break;
+        }
 
         gridview.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent,
