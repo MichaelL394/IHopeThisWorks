@@ -9,12 +9,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
+
 public class beginningScreen extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
 
     private Toolbar mToolBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +40,10 @@ public class beginningScreen extends AppCompatActivity {
     /** goes to meats and beans section */
     public void goToMeatsAndBeans(View view) {
         Intent i = new Intent(this, meatsForNow.class);
+        String strName = "meats and beans";
+        i.putExtra("STRINGSEND", strName);
         startActivity(i);
+
     }
 
     /** goes to vegetable section */
