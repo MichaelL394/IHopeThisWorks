@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".beginningScreen"
+    tools:context=".homeScreen"
     android:id="@+id/firstScreen">
 
 
@@ -36,8 +36,10 @@
         <ImageButton
             android:layout_width="150dp"
             android:layout_height="80dp"
-            android:onClick="vegetable"
+            android:onClick="goToMeatsAndBeans"
+            android:id="@+id/doNotPress"
             />
+
         <ImageButton
             android:background="@drawable/strawberries"
             android:layout_width="150dp"
@@ -64,7 +66,7 @@
             android:background="@drawable/a"
             android:layout_width="150dp"
             android:layout_height="80dp"
-            android:onClick="goToMeatsAndBeans"
+            android:onClick="vegetable"
             />
         <ImageButton
             android:background="@drawable/a"

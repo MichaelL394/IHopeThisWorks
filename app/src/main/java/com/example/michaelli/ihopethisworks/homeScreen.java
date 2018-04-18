@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 public class homeScreen extends AppCompatActivity {
 
@@ -20,7 +19,7 @@ public class homeScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_beggining_screen);
+        setContentView(R.layout.activity_home_screen);
 
 
         mToolBar = (Toolbar) findViewById(R.id.nav_action);
