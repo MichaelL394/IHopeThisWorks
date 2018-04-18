@@ -39,7 +39,7 @@
             android:onClick="vegetable"
             />
         <ImageButton
-            android:background="@drawable/a"
+            android:background="@drawable/strawberries"
             android:layout_width="150dp"
             android:layout_height="80dp"
             android:onClick="fruits"

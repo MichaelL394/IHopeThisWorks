@@ -17,8 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SingleViewActivity" />
-        <activity android:name=".meatsForNow"></activity>
-        <activity android:name=".vegetable"></activity>
+        <activity android:name=".generalGrid"></activity>
     </application>
 
 </manifest>
