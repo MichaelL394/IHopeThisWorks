@@ -8,14 +8,14 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
-public class beginningScreen extends AppCompatActivity {
+public class homeScreen extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
 
     private Toolbar mToolBar;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,7 @@ public class beginningScreen extends AppCompatActivity {
         mToggle.syncState();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     /** goes to meats and beans section */
@@ -53,8 +54,7 @@ public class beginningScreen extends AppCompatActivity {
         startActivity(i);
     }
 
-    /** goes to vegetables section */
-    public void vegetable(View view) {
+    public void dairy(View view) {
         Intent i = new Intent(this, generalGrid.class);
         String strName = "vegetables";
         i.putExtra("STRING_SEND", strName);
@@ -62,18 +62,28 @@ public class beginningScreen extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void dairy(View view) {
+    /** goes to vegetables section */
+    public void vegetable(View view) {
         Intent i = new Intent(this, generalGrid.class);
+        String strName = "vegetables";
+        i.putExtra("STRING_SEND", strName);
+        i.putExtra("foodType", 4);
         startActivity(i);
     }
 
     public void grains(View view) {
         Intent i = new Intent(this, generalGrid.class);
+        String strName = "vegetables";
+        i.putExtra("STRING_SEND", strName);
+        i.putExtra("foodType", 5);
         startActivity(i);
     }
 
     public void other(View view) {
         Intent i = new Intent(this, generalGrid.class);
+        String strName = "vegetables";
+        i.putExtra("STRING_SEND", strName);
+        i.putExtra("foodType", 6);
         startActivity(i);
     }
 
