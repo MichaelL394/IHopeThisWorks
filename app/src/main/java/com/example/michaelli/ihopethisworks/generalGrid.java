@@ -40,28 +40,28 @@ public class generalGrid extends AppCompatActivity {
         GridView gridview = (GridView) findViewById(R.id.gridview);
 
         Intent retrieve = getIntent();
-        int foodCategory = retrieve.getExtras().getInt("foodType");
+        final int foodCategory = retrieve.getExtras().getInt("foodType");
 
         TextView header = findViewById(R.id.headerTextStart);
 
         switch (foodCategory) {
-            case 1:  gridview.setAdapter(new meatAdp(this));
-                        header.setText("Meat");
+            case 1:  gridview.setAdapter(new dairyAdp(this));
+                        header.setText("Dairy");
                 break;
             case 2:  gridview.setAdapter(new fruitAdp(this));
                         header.setText("Fruit");
                 break;
-            case 3:  gridview.setAdapter(new dairyAdp(this));
-                        header.setText("Dairy");
+            case 3:  gridview.setAdapter(new grainAdp(this));
+                        header.setText("Grain");
                 break;
-            case 4:  gridview.setAdapter(new vegetablesAdp(this));
-                        header.setText("Vegetables");
+            case 4:  gridview.setAdapter(new meatAdp(this));
+                        header.setText("Meat");
                 break;
             case 5:  gridview.setAdapter(new otherAdp(this));
                         header.setText("Other");
                 break;
-            case 6:  gridview.setAdapter(new grainAdp(this));
-                        header.setText("Grain");
+            case 6:  gridview.setAdapter(new vegetablesAdp(this));
+                        header.setText("Vegetables");
                 break;
             default: gridview.setAdapter(new meatAdp(this));
                 break;
@@ -74,6 +74,7 @@ public class generalGrid extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), SingleViewActivity.class);
                 // Pass image index
                 i.putExtra("id", position);
+                i.putExtra("category", foodCategory);
                 startActivity(i);
 
             }
@@ -91,11 +92,4 @@ public class generalGrid extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (mToggle.onOptionsItemSelected(item)){
-            return true;
-        }
-        return  super.onOptionsItemSelected(item);
-    }
 }
