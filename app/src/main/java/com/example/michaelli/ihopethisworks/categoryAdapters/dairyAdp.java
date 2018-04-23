@@ -51,27 +51,7 @@ public class dairyAdp extends BaseAdapter {
 
     // Keep all Images in array
     public Integer[] mThumbIds = {
-            R.drawable.pineapples,
-            R.drawable.oranges, R.drawable.pineapples,
-            R.drawable.eggs, R.drawable.apple,
-            R.drawable.tomatoes, R.drawable.watermelon,
-            R.drawable.bannana,
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7,
-            R.drawable.sample_0, R.drawable.sample_1,
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7,
-            R.drawable.sample_0, R.drawable.sample_1,
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7
-    };
-
-    public Integer[] vegetables = {
-            R.drawable.a, R.drawable.b,
-            R.drawable.sample_2, R.drawable.sample_3,
+            R.drawable.butter, R.drawable.ice_cream,
             R.drawable.sample_4, R.drawable.sample_5,
             R.drawable.sample_6, R.drawable.sample_7,
             R.drawable.sample_0, R.drawable.sample_1,
@@ -86,7 +66,10 @@ public class dairyAdp extends BaseAdapter {
 
 
     public String[] two = {
-           "drugs","cartos \n cats \n dog","drugos",("elepant" + '\n' +
+           //Butter
+            "Butter may be stored for 1-2 days in room temperature \n Can last 1-2 months if stored in a refrigerator on the date of purchase",
+            //Ice cream
+            "cartos \n cats \n dog","drugos",("elepant" + '\n' +
             "dog"), "cat"
     };
     public String[] three = {
