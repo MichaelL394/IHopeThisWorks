@@ -2,6 +2,8 @@ package com.example.michaelli.ihopethisworks;
 
 import android.app.ActionBar;
 import android.content.Intent;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,12 +12,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-public class homeScreen extends AppCompatActivity {
+public class homeScreen extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
 
     private Toolbar mToolBar;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,20 +36,72 @@ public class homeScreen extends AppCompatActivity {
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
+        NavigationView navigationView = findViewById(R.id.nav_view);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem Item) {
+                        // set item as selected to persist highlight
+                        Item.setChecked(true);
+                        // close drawer when item is tapped
+                        mDrawerLayout.closeDrawers();
+
+                        int idOfMenuItem = Item.getItemId();
+
+                        switch (idOfMenuItem) {
+                            case R.id.nav1:
+                                Intent dairy = new Intent(getApplicationContext(), generalGrid.class);
+                                String strName = "dairy";
+                                dairy.putExtra("STRING_SEND", strName);
+                                dairy.putExtra("foodType", 1);
+                                startActivity(dairy);
+                                break;
+                            case R.id.nav2:
+                                Intent fruits = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "Fruits";
+                                fruits.putExtra("STRING_SEND", strName);
+                                fruits.putExtra("foodType", 2);
+                                startActivity(fruits);
+                                break;
+                            case R.id.nav3:
+                                Intent grain = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "grains";
+                                grain.putExtra("STRING_SEND", strName);
+                                grain.putExtra("foodType", 3);
+                                startActivity(grain);
+                                break;
+
+
+                        }
+                        return true;
+                    }
+                });
+    }
+    //below is for pullout navigation menu hamburger button
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.nav1:
-             Intent dairy = new Intent(this, generalGrid.class);
-             String strName = "dairy";
-             dairy.putExtra("STRING_SEND", strName);
-             dairy.putExtra("foodType", 1);
-             startActivity(dairy);
-             break;
+        if (mToggle.onOptionsItemSelected(item)){
+            return true;
+        }
+        return  super.onOptionsItemSelected(item);
+    }
 
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item){
+        int idOfMenuItem = item.getItemId();
+
+        switch(idOfMenuItem){
+            case R.id.nav1:
+                Intent dairy = new Intent(this, generalGrid.class);
+                String strName = "dairy";
+                dairy.putExtra("STRING_SEND", strName);
+                dairy.putExtra("foodType", 1);
+                startActivity(dairy);
+                break;
             case R.id.nav2:
                 Intent fruits = new Intent(this, generalGrid.class);
                 strName = "Fruits";
@@ -53,18 +109,14 @@ public class homeScreen extends AppCompatActivity {
                 fruits.putExtra("foodType", 2);
                 startActivity(fruits);
                 break;
-
-            default:
-                // If we got here, the user's action was not recognized.
-                // Invoke the superclass to handle it.
-                return super.onOptionsItemSelected(item);
-
         }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.firstScreen);
+        drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-
-
+    // all below handles the actions after user selects a category of food
     public void dairy(View view) {
         Intent i = new Intent(this, generalGrid.class);
         String strName = "dairy";
