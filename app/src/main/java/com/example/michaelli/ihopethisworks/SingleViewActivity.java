@@ -1,14 +1,24 @@
 package com.example.michaelli.ihopethisworks;
 
 import android.content.Intent;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.michaelli.ihopethisworks.categoryAdapters.*;
 
 public class SingleViewActivity extends AppCompatActivity {
+
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mToggle;
+
+    private Toolbar mToolBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +30,7 @@ public class SingleViewActivity extends AppCompatActivity {
         int category = i.getExtras().getInt("category");
 
         ImageView imageView = (ImageView) findViewById(R.id.SingleView);
-        TextView header = findViewById(R.id.headerTextSingle);
+        TextView header = findViewById(R.id.headerTextStart);
 
         switch(category) {
             case 1: dairyAdp dairy = new dairyAdp(this);
@@ -49,7 +59,68 @@ public class SingleViewActivity extends AppCompatActivity {
                 break;
 }
 
+        mToolBar = (Toolbar) findViewById(R.id.nav_action);
+        setSupportActionBar(mToolBar);
+
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.singleDrawerView);
+        mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
+
+        mDrawerLayout.addDrawerListener(mToggle);
+        mToggle.syncState();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        NavigationView navigationView = findViewById(R.id.singleViewNavigation);
+
+        //navigation user selection handler
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem Item) {
+                        // set item as selected to persist highlight
+                        Item.setChecked(true);
+                        // close drawer when item is tapped
+                        mDrawerLayout.closeDrawers();
+
+                        int idOfMenuItem = Item.getItemId();
+
+                        switch (idOfMenuItem) {
+                            case R.id.nav1:
+                                Intent dairy = new Intent(getApplicationContext(), generalGrid.class);
+                                String strName = "dairy";
+                                dairy.putExtra("STRING_SEND", strName);
+                                dairy.putExtra("foodType", 1);
+                                startActivity(dairy);
+                                break;
+                            case R.id.nav2:
+                                Intent fruits = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "Fruits";
+                                fruits.putExtra("STRING_SEND", strName);
+                                fruits.putExtra("foodType", 2);
+                                startActivity(fruits);
+                                break;
+                            case R.id.nav3:
+                                Intent grain = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "grains";
+                                grain.putExtra("STRING_SEND", strName);
+                                grain.putExtra("foodType", 3);
+                                startActivity(grain);
+                                break;
 
 
+
+                        }
+                        return true;
+                    }
+                });
+    }
+    //below is for pullout navigation menu hamburger button
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (mToggle.onOptionsItemSelected(item)){
+            return true;
+        }
+        return  super.onOptionsItemSelected(item);
     }
 }

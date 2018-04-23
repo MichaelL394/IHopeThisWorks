@@ -90,6 +90,14 @@ public class generalGrid extends AppCompatActivity {
         mToggle.syncState();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
-
+    //below is for pullout navigation menu hamburger button
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (mToggle.onOptionsItemSelected(item)){
+            return true;
+        }
+        return  super.onOptionsItemSelected(item);
+    }
 }
