@@ -12,7 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-public class homeScreen extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class homeScreen extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
@@ -39,6 +39,7 @@ public class homeScreen extends AppCompatActivity implements NavigationView.OnNa
         NavigationView navigationView = findViewById(R.id.nav_view);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         //navigation user selection handler
         navigationView.setNavigationItemSelectedListener(
@@ -76,10 +77,12 @@ public class homeScreen extends AppCompatActivity implements NavigationView.OnNa
                                 break;
 
 
+
                         }
                         return true;
                     }
                 });
+
     }
     //below is for pullout navigation menu hamburger button
     @Override
@@ -90,32 +93,6 @@ public class homeScreen extends AppCompatActivity implements NavigationView.OnNa
         return  super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item){
-        int idOfMenuItem = item.getItemId();
-
-        switch(idOfMenuItem){
-            case R.id.nav1:
-                Intent dairy = new Intent(this, generalGrid.class);
-                String strName = "dairy";
-                dairy.putExtra("STRING_SEND", strName);
-                dairy.putExtra("foodType", 1);
-                startActivity(dairy);
-                break;
-            case R.id.nav2:
-                Intent fruits = new Intent(this, generalGrid.class);
-                strName = "Fruits";
-                fruits.putExtra("STRING_SEND", strName);
-                fruits.putExtra("foodType", 2);
-                startActivity(fruits);
-                break;
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.firstScreen);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
 
     // all below handles the actions after user selects a category of food
     public void dairy(View view) {
