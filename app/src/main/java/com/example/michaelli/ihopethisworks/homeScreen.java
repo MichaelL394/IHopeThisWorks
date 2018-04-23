@@ -40,6 +40,7 @@ public class homeScreen extends AppCompatActivity implements NavigationView.OnNa
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        //navigation user selection handler
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override

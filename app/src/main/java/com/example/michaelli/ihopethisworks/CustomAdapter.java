@@ -41,12 +41,4 @@ public class CustomAdapter extends BaseAdapter {
         return view;
     }
 }
-    //below is for pullout navigation menu
-    /**@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (mToggle.onOptionsItemSelected(item)){
-            return true;
-        }
-        return  super.onOptionsItemSelected(item);
-    }
-    **/
+

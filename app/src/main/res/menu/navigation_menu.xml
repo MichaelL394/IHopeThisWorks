@@ -3,13 +3,13 @@
 
     <item
         android:id="@+id/nav1"
-        android:title="nav1 sample"/>
+        android:title="dairy"/>
 
     <item android:id="@+id/nav2"
-        android:title="nav2 sample"/>
+        android:title="fruit"/>
 
     <item
         android:id="@+id/nav3"
-        android:title="nav3 sample"/>
+        android:title="grain"/>
 
 </menu>
