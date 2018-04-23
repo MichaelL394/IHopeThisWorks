@@ -1,77 +1,45 @@
 package com.example.michaelli.ihopethisworks;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.view.View;
 
-import com.example.michaelli.ihopethisworks.categoryAdapters.*;
-
-public class SingleViewActivity extends AppCompatActivity {
+public class homeScreen extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
 
     private Toolbar mToolBar;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_single_view);
-        Intent i = getIntent();
-        // Selected image id
-        int position = i.getExtras().getInt("id");
-        int category = i.getExtras().getInt("category");
+        setContentView(R.layout.activity_home_screen);
 
-        ImageView imageView = (ImageView) findViewById(R.id.SingleView);
-        TextView header = findViewById(R.id.headerTextStart);
-
-        switch(category) {
-            case 1: dairyAdp dairy = new dairyAdp(this);
-                imageView.setImageResource(dairy.mThumbIds[position]);
-                header.setText("dairy");
-            break;
-            case 2: fruitAdp fruit = new fruitAdp(this);
-                imageView.setImageResource(fruit.mThumbIds[position]);
-                header.setText("fruit");
-                break;
-            case 3: grainAdp grain = new grainAdp(this);
-                imageView.setImageResource(grain.mThumbIds[position]);
-                header.setText("grain");
-                break;
-            case 4: meatAdp meat = new meatAdp(this);
-                imageView.setImageResource(meat.mThumbIds[position]);
-                header.setText("meat");
-                break;
-            case 5: otherAdp other = new otherAdp(this);
-                imageView.setImageResource(other.mThumbIds[position]);
-                header.setText("other");
-                break;
-            case 6: vegetablesAdp vegetables = new vegetablesAdp(this);
-                imageView.setImageResource(vegetables.mThumbIds[position]);
-                header.setText("vegetables");
-                break;
-}
 
         mToolBar = (Toolbar) findViewById(R.id.nav_action);
         setSupportActionBar(mToolBar);
 
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.singleDrawerView);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.firstScreen);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
 
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
 
+        NavigationView navigationView = findViewById(R.id.nav_view);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-
-        NavigationView navigationView = findViewById(R.id.singleViewNavigation);
 
         //navigation user selection handler
         navigationView.setNavigationItemSelectedListener(
@@ -114,6 +82,7 @@ public class SingleViewActivity extends AppCompatActivity {
                         return true;
                     }
                 });
+
     }
     //below is for pullout navigation menu hamburger button
     @Override
@@ -123,4 +92,58 @@ public class SingleViewActivity extends AppCompatActivity {
         }
         return  super.onOptionsItemSelected(item);
     }
+
+
+    // all below handles the actions after user selects a category of food
+    public void dairy(View view) {
+        Intent i = new Intent(this, generalGrid.class);
+        String strName = "dairy";
+        i.putExtra("STRING_SEND", strName);
+        i.putExtra("foodType", 1);
+        startActivity(i);
+    }
+
+     public void fruits(View view) {
+        Intent i = new Intent(this, generalGrid.class);
+        String strName = "Fruits";
+        i.putExtra("STRING_SEND", strName);
+        i.putExtra("foodType", 2);
+        startActivity(i);
+    }
+
+    public void grains(View view) {
+        Intent i = new Intent(this, generalGrid.class);
+        String strName = "vegetables";
+        i.putExtra("STRING_SEND", strName);
+        i.putExtra("foodType", 3);
+        startActivity(i);
+    }
+
+    /** goes to meats and beans section */
+    public void goToMeatsAndBeans(View view) {
+        Intent i = new Intent(this, generalGrid.class);
+        String strName = "meats and beans";
+        i.putExtra("STRING_SEND", strName);
+        i.putExtra("foodType", 4);
+        startActivity(i);
+    }
+
+    public void other(View view) {
+        Intent i = new Intent(this, generalGrid.class);
+        String strName = "vegetables";
+        i.putExtra("STRING_SEND", strName);
+        i.putExtra("foodType", 5);
+        startActivity(i);
+    }
+
+    /** goes to vegetables section */
+    public void vegetable(View view) {
+        Intent i = new Intent(this, generalGrid.class);
+        String strName = "vegetables";
+        i.putExtra("STRING_SEND", strName);
+        i.putExtra("foodType", 6);
+        startActivity(i);
+    }
+
+
 }
