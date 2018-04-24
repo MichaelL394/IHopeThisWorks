@@ -33,26 +33,32 @@
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="4dp"
         >
-        <ImageButton
-            android:layout_width="150dp"
-            android:layout_height="80dp"
-            android:onClick="goToMeatsAndBeans"
-            android:id="@+id/doNotPress"
-            />
 
-        <ImageButton
-            android:background="@drawable/strawberries"
-            android:layout_width="150dp"
-            android:layout_height="80dp"
-            android:onClick="fruits"
-            />
-        <ImageButton
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
             android:background="@drawable/a"
-            android:layout_width="150dp"
-            android:layout_height="80dp"
-            android:onClick="other"
-            android:contentDescription="dog"
+            android:onClick="dairy"
+            android:text="dairy"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/strawberries"
+            android:onClick="fruits"
+            android:text="fruits"
+            android:layout_marginBottom="5dp"
+            />
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/a"
+            android:onClick="grains"
+            android:text="grains"
             />
     </LinearLayout>
 
@@ -62,30 +68,37 @@
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="8dp"
         >
-        <ImageButton
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:onClick="goToMeatsAndBeans"
+            android:background="@drawable/steak"
+            android:text="meats"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            />
+        <Button
             android:background="@drawable/a"
-            android:layout_width="150dp"
-            android:layout_height="80dp"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:onClick="other"
+            android:text="other"
+            android:layout_marginBottom="5dp"
+            />
+        <Button
+            android:background="@drawable/a"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
             android:onClick="vegetable"
+            android:text="vegetable"
             />
-        <ImageButton
-            android:background="@drawable/a"
-            android:layout_width="150dp"
-            android:layout_height="80dp"
-            android:onClick="grains"
-            />
-        <ImageButton
-        android:background="@drawable/a"
-        android:layout_width="150dp"
-        android:layout_height="80dp"
-        android:onClick="dairy"
-            />
-
     </LinearLayout>
 
 
-</LinearLayout>
+  </LinearLayout>
 
 </LinearLayout>
 
