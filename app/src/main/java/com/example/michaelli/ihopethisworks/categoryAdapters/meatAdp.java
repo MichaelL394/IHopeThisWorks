@@ -67,10 +67,11 @@ public class meatAdp extends BaseAdapter {
             R.drawable.sample_6, R.drawable.sample_7
     };
 
-
+    // example of skip line syntax ("elepant" + '\n' +"dog") or "cartos \n cats \n dog","drugos"
     public String[] two = {
-           "drugs","cartos \n cats \n dog","drugos",("elepant" + '\n' +
-            "dog"), "cat"
+            "shark meat is an excellent source of cartilage \n will go bad in a few days",
+            "Lizard meat goes great with salads after cooking and needs to be refrigerated",
+            "cartos \n cats \n dog","drugos", "cat"
     };
     public String[] three = {
             "staves","cartos","drugos",("elepant" + '\n' +

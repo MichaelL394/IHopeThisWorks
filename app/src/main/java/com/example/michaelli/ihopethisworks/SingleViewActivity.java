@@ -31,31 +31,40 @@ public class SingleViewActivity extends AppCompatActivity {
 
         ImageView imageView = (ImageView) findViewById(R.id.SingleView);
         TextView header = findViewById(R.id.headerTextStart);
+        TextView first = findViewById(R.id.textSingleView1);
+        TextView second = findViewById(R.id.textSingleView2);
 
+        //This selects which text and image to use by picking which adapter, and plugging category number in
         switch(category) {
             case 1: dairyAdp dairy = new dairyAdp(this);
                 imageView.setImageResource(dairy.mThumbIds[position]);
                 header.setText("dairy");
+                first.setText(dairy.two[position]);
             break;
             case 2: fruitAdp fruit = new fruitAdp(this);
                 imageView.setImageResource(fruit.mThumbIds[position]);
                 header.setText("fruit");
+                first.setText(fruit.two[position]);
                 break;
             case 3: grainAdp grain = new grainAdp(this);
                 imageView.setImageResource(grain.mThumbIds[position]);
                 header.setText("grain");
+                first.setText(grain.two[position]);
                 break;
             case 4: meatAdp meat = new meatAdp(this);
                 imageView.setImageResource(meat.mThumbIds[position]);
                 header.setText("meat");
+                first.setText(meat.two[position]);
                 break;
             case 5: otherAdp other = new otherAdp(this);
                 imageView.setImageResource(other.mThumbIds[position]);
                 header.setText("other");
+                first.setText(other.two[position]);
                 break;
             case 6: vegetablesAdp vegetables = new vegetablesAdp(this);
                 imageView.setImageResource(vegetables.mThumbIds[position]);
                 header.setText("vegetables");
+                first.setText(vegetables.two[position]);
                 break;
 }
 
