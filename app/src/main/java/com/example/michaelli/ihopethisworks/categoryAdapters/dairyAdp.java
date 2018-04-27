@@ -52,25 +52,21 @@ public class dairyAdp extends BaseAdapter {
     // Keep all Images in array
     public Integer[] mThumbIds = {
             R.drawable.butter, R.drawable.ice_cream,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7,
-            R.drawable.sample_0, R.drawable.sample_1,
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7,
-            R.drawable.sample_0, R.drawable.sample_1,
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7
+            R.drawable.milk, R.drawable.half_and_half
     };
 
 
     public String[] two = {
            //Butter
-            "Butter may be stored for 1-2 days in room temperature \n Can last 1-2 months if stored in a refrigerator on the date of purchase",
+            "Butter can be stored for 1-2 days in room temperature. It can last up to 1-2 months if stored in a refrigerator on the date of purchase",
             //Ice cream
-            "cartos \n cats \n dog","drugos",("elepant" + '\n' +
-            "dog"), "cat"
+            "Ice cream can be stored in the freezer for 2-3 months or 1-2 months after being opened",
+            //milk
+            "Milk can be stored in the fridge for 5 days after being opened",
+            //half and half
+            "Half and half can be stored in the fridge for up to 10 days"
+            //yogurt
+            "Yogurt can be kept in the fridge for up to 6 weeks unopened and 7 to 10 days after opening"
     };
     public String[] three = {
             "staves","cartos","drugos",("elepant" + '\n' +
