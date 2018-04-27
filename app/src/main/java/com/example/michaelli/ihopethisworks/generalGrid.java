@@ -31,7 +31,21 @@ public class generalGrid extends AppCompatActivity {
     private ActionBarDrawerToggle mToggle;
 
     private Toolbar mToolBar;
+   //string
+   private String var;
 
+   public generalGrid() {
+      setVar("some_value");
+   }
+
+   public String getVar() {
+      return this.var;
+   }
+
+   public void setVar(String var) {
+      this.var = var;
+   }
+   //send
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
