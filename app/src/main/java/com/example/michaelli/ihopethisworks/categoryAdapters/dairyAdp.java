@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.content.Intent;
 
 import com.example.michaelli.ihopethisworks.R;
 
@@ -45,6 +46,7 @@ public class dairyAdp extends BaseAdapter {
         {
             imageView = (ImageView) convertView;
         }
+
         imageView.setImageResource(mThumbIds[position]);
         return imageView;
     }
@@ -52,17 +54,13 @@ public class dairyAdp extends BaseAdapter {
     // Keep all Images in array
     public Integer[] mThumbIds = {
             R.drawable.butter, R.drawable.ice_cream,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7,
-            R.drawable.sample_0, R.drawable.sample_1,
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7,
-            R.drawable.sample_0, R.drawable.sample_1,
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7
+
     };
+        public Integer[] cream = {
+            R.drawable.ice_cream,
+
+    };
+
 
 
     public String[] two = {

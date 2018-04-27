@@ -110,6 +110,7 @@ public class SingleViewActivity extends AppCompatActivity {
                         int idOfMenuItem = Item.getItemId();
 
 
+
                         switch (idOfMenuItem) {
                             case R.id.nav1:
                                 Intent dairy = new Intent(getApplicationContext(), generalGrid.class);
