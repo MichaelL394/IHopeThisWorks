@@ -91,7 +91,26 @@ public class generalGrid extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        android.support.design.widget.NavigationView
+        navigationView = findViewById(R.id.gridview_nav);
+        switch (foodCategory) {
+            case 1:navigationView.inflateMenu(R.menu.dairy_menu);
+            break;
+            case 2:navigationView.inflateMenu(R.menu.fruits_menu);
+            break;
+            case 3:navigationView.inflateMenu(R.menu.grain_menu);
+            break;
+            case 4:navigationView.inflateMenu(R.menu.meats_menu);
+            break;
+            case 5:navigationView.inflateMenu(R.menu.other_menu);
+            break;
+            case 6:navigationView.inflateMenu(R.menu.vegetables_menu);
+            break;
+        }
     }
+
+
     //below is for pullout navigation menu hamburger button
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

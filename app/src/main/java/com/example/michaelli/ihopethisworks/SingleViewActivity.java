@@ -81,6 +81,21 @@ public class SingleViewActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         NavigationView navigationView = findViewById(R.id.singleViewNavigation);
+        switch (category) {
+            case 1:navigationView.inflateMenu(R.menu.dairy_menu);
+            break;
+            case 2:navigationView.inflateMenu(R.menu.fruits_menu);
+            break;
+            case 3:navigationView.inflateMenu(R.menu.grain_menu);
+            break;
+            case 4:navigationView.inflateMenu(R.menu.meats_menu);
+            break;
+            case 5:navigationView.inflateMenu(R.menu.other_menu);
+            break;
+            case 6:navigationView.inflateMenu(R.menu.vegetables_menu);
+            break;
+        }
+
 
         //navigation user selection handler
         navigationView.setNavigationItemSelectedListener(
@@ -93,6 +108,7 @@ public class SingleViewActivity extends AppCompatActivity {
                         mDrawerLayout.closeDrawers();
 
                         int idOfMenuItem = Item.getItemId();
+
 
                         switch (idOfMenuItem) {
                             case R.id.nav1:

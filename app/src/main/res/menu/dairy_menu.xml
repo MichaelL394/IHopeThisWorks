@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav1"
+        android:title="desserts"/>
+
+    <item android:id="@+id/nav2"
+        android:title="cream"/>
+    <item
+        android:id="@+id/nav3"
+        android:title="cheese"/>
+    <item
+        android:id="@+id/nav4"
+        android:title="yogurt"/>
+
+</menu>
