@@ -28,16 +28,29 @@ public class SingleViewActivity extends AppCompatActivity {
         // Selected image id
         int position = i.getExtras().getInt("id");
         int category = i.getExtras().getInt("category");
+        int subCategory = i.getExtras().getInt("subCategory");
 
         ImageView imageView = (ImageView) findViewById(R.id.SingleView);
         TextView header = findViewById(R.id.headerTextStart);
         TextView first = findViewById(R.id.textSingleView1);
         TextView second = findViewById(R.id.textSingleView2);
 
-        //This selects which text and image to use by picking which adapter, and plugging category number in
+        //This selects which texts and images to use by picking which adapter, and plugging category integer in
         switch(category) {
-            case 1: dairyAdp dairy = new dairyAdp(this);
-                imageView.setImageResource(dairy.mThumbIds[position]);
+            case 1: dairyAdp dairy = new dairyAdp(this, subCategory);
+            switch(subCategory){
+                case 0: imageView.setImageResource(dairy.allDairy[position]);
+                    break;
+                case 1: imageView.setImageResource(dairy.cream[position]);
+                    break;
+                case 2: imageView.setImageResource(dairy.allDairy[position]);
+                    break;
+                case 3: imageView.setImageResource(dairy.allDairy[position]);
+                    break;
+                case 4: imageView.setImageResource(dairy.allDairy[position]);
+                    break;
+            }
+
                 header.setText("dairy");
                 first.setText(dairy.two[position]);
             break;
@@ -108,8 +121,6 @@ public class SingleViewActivity extends AppCompatActivity {
                         mDrawerLayout.closeDrawers();
 
                         int idOfMenuItem = Item.getItemId();
-
-
 
                         switch (idOfMenuItem) {
                             case R.id.nav1:
