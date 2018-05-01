@@ -32,7 +32,6 @@ public class generalGrid extends AppCompatActivity {
 
     private Toolbar mToolBar;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,15 +41,13 @@ public class generalGrid extends AppCompatActivity {
 
         Intent retrieve = getIntent();
         final int foodCategory = retrieve.getExtras().getInt("foodType");
-        int subCategory = retrieve.getExtras().getInt("subCategory");
-
-        Intent sendToNav = new Intent(getApplicationContext(), dairyAdp.class);
-        sendToNav.putExtra("sub", subCategory);
+        final int subCategory = retrieve.getExtras().getInt("subType");
 
         TextView header = findViewById(R.id.headerTextStart);
 
+        //selects which food Adapter to use based on user selection of category
         switch (foodCategory) {
-            case 1:  gridview.setAdapter(new dairyAdp(this));
+            case 1:  gridview.setAdapter(new dairyAdp(this, subCategory));
                         header.setText("Dairy");
                 break;
             case 2:  gridview.setAdapter(new fruitAdp(this));
@@ -80,6 +77,7 @@ public class generalGrid extends AppCompatActivity {
                 // Pass image index
                 i.putExtra("id", position);
                 i.putExtra("category", foodCategory);
+                i.putExtra("subCategory", subCategory);
                 startActivity(i);
 
             }
@@ -97,7 +95,7 @@ public class generalGrid extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        //navigation menu handler
+        //navigation bar menu handler
         android.support.design.widget.NavigationView
         navigationView = findViewById(R.id.gridview_nav);
         switch (foodCategory) {
@@ -114,7 +112,8 @@ public class generalGrid extends AppCompatActivity {
             case 6:navigationView.inflateMenu(R.menu.vegetables_menu);
             break;
         }
-                //navigation user selection handler
+
+        //navigation user selection handler
         navigationView.setNavigationItemSelectedListener(
                 new android.support.design.widget.NavigationView.OnNavigationItemSelectedListener() {
                     @Override
@@ -126,11 +125,11 @@ public class generalGrid extends AppCompatActivity {
 
                         int idOfMenuItem = Item.getItemId();
 
-
+                    //sends the id of which category was chosen and opens another gridview based on user choice
                         switch (idOfMenuItem) {
                             case R.id.nav1:
                                 Intent dessert = new Intent(getApplicationContext(), generalGrid.class);
-                                String strName = "dairy";
+                                String strName = "desserts";
                                 dessert.putExtra("STRING_SEND", strName);
                                 dessert.putExtra("foodType", 1);
                                 dessert.putExtra("subType", 1);
@@ -138,22 +137,28 @@ public class generalGrid extends AppCompatActivity {
                                 break;
                             case R.id.nav2:
                                 Intent cream = new Intent(getApplicationContext(), generalGrid.class);
-                                strName = "Fruits";
+                                strName = "cream";
                                 cream.putExtra("STRING_SEND", strName);
                                 cream.putExtra("foodType", 1);
                                 cream.putExtra("subType", 2);
                                 startActivity(cream);
                                 break;
                             case R.id.nav3:
-                                Intent grain = new Intent(getApplicationContext(), generalGrid.class);
-                                strName = "grains";
-                                grain.putExtra("STRING_SEND", strName);
-                                grain.putExtra("foodType", 3);
-                                grain.putExtra("subType", 1);
-                                startActivity(grain);
+                                Intent cheese = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "cheese";
+                                cheese.putExtra("STRING_SEND", strName);
+                                cheese.putExtra("foodType", 1);
+                                cheese.putExtra("subType", 3);
+                                startActivity(cheese);
                                 break;
-
-
+                            case R.id.nav4:
+                                Intent yogurt = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "yogurt";
+                                yogurt.putExtra("STRING_SEND", strName);
+                                yogurt.putExtra("foodType", 1);
+                                yogurt.putExtra("subType", 4);
+                                startActivity(yogurt);
+                                break;
 
                         }
                         return true;

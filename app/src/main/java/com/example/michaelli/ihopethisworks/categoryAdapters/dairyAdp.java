@@ -10,16 +10,22 @@ import android.widget.ImageView;
 
 import com.example.michaelli.ihopethisworks.R;
 
+
 public class dairyAdp extends BaseAdapter {
+
+    int nav_sel = 0;
+
     private Context mContext;
 
     // Constructor
-    public dairyAdp(Context c) {
+
+    public dairyAdp(Context c, int resources) {
         mContext = c;
+        nav_sel = resources;
     }
 
     public int getCount() {
-        return mThumbIds.length;
+            return allDairy.length;
     }
 
     public Object getItem(int position) {
@@ -30,7 +36,8 @@ public class dairyAdp extends BaseAdapter {
         return 0;
     }
 
-    // create a new ImageView for each item referenced by the Adapter
+
+    // create new ImageViews in grid based on (selected array here).length or number of items in selected array
     public View getView(int position, View convertView, ViewGroup parent) {
         ImageView imageView;
 
@@ -45,15 +52,28 @@ public class dairyAdp extends BaseAdapter {
         {
             imageView = (ImageView) convertView;
         }
-        imageView.setImageResource(mThumbIds[position]);
+// this calls which image in which array to use for each generated imageview button
+        switch (nav_sel){
+            case 0:imageView.setImageResource(allDairy[position]);
+            break;
+            case 1: imageView.setImageResource(cream[position]);
+            break;
+            case 2: imageView.setImageResource(cream[position]);
+        }
+
         return imageView;
     }
 
     // Keep all Images in array
     public Integer[] mThumbIds = {
             R.drawable.butter, R.drawable.ice_cream,
-            R.drawable.milk, R.drawable.half_and_half
+
     };
+        public Integer[] cream = {
+            R.drawable.ice_cream,
+
+    };
+
 
 
     public String[] two = {
