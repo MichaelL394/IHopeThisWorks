@@ -51,7 +51,7 @@ public class vegetablesAdp extends BaseAdapter {
 
     // Keep all Images in array
     public Integer[] mThumbIds = {
-            R.drawable.a, R.drawable.b,
+            R.drawable.artichoke, R.drawable.b,
             R.drawable.b, R.drawable.d,
             R.drawable.sample_4, R.drawable.sample_0,
             R.drawable.sample_6, R.drawable.sample_7,
@@ -68,7 +68,9 @@ public class vegetablesAdp extends BaseAdapter {
 
 
     public String[] two = {
-           "drugs","cartos \n cats \n dog","drugos",("elepant" + '\n' +
+           //artichoke
+            "Artichokes should be stored in the fridge in a moisture rich environment. ",
+            "cartos \n cats \n dog","drugos",("elepant" + '\n' +
             "dog"), "cat"
     };
     public String[] three = {
