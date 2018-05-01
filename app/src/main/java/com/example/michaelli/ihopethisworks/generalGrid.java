@@ -42,13 +42,15 @@ public class generalGrid extends AppCompatActivity {
         Intent retrieve = getIntent();
         final int foodCategory = retrieve.getExtras().getInt("foodType");
         final int subCategory = retrieve.getExtras().getInt("subType");
+        String headerTitle = retrieve.getExtras().getString("STRING_SEND");
+
 
         TextView header = findViewById(R.id.headerTextStart);
 
         //selects which food Adapter to use based on user selection of category
         switch (foodCategory) {
             case 1:  gridview.setAdapter(new dairyAdp(this, subCategory));
-                        header.setText("Dairy");
+                        header.setText(headerTitle);
                 break;
             case 2:  gridview.setAdapter(new fruitAdp(this));
                         header.setText("Fruit");
@@ -125,7 +127,7 @@ public class generalGrid extends AppCompatActivity {
 
                         int idOfMenuItem = Item.getItemId();
 
-                    //sends the id of which category was chosen and opens another gridview based on user choice
+                    //sends the id of which category was chosen in nav bar and opens another gridview based on user choice
                         switch (idOfMenuItem) {
                             case R.id.nav1:
                                 Intent dessert = new Intent(getApplicationContext(), generalGrid.class);

@@ -56,7 +56,7 @@ public class dairyAdp extends BaseAdapter {
         switch (nav_sel){
             case 0:imageView.setImageResource(allDairy[position]);
             break;
-            case 1: imageView.setImageResource(cream[position]);
+            case 1: imageView.setImageResource(desserts[position]);
             break;
             case 2: imageView.setImageResource(cream[position]);
         }
@@ -68,6 +68,11 @@ public class dairyAdp extends BaseAdapter {
     public Integer[] allDairy = {
             R.drawable.butter, R.drawable.ice_cream, R.drawable.milk,
             R.drawable.half_and_half, R.drawable.yogurt
+
+    };
+    public Integer[] desserts = {
+            R.drawable.butter, R.drawable.ice_cream,
+            R.drawable.candy,
 
     };
         public Integer[] cream = {
