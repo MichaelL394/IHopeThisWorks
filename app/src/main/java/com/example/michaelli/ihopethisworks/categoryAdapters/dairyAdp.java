@@ -65,8 +65,9 @@ public class dairyAdp extends BaseAdapter {
     }
 
     // Keep all Images in array
-    public Integer[] mThumbIds = {
-            R.drawable.butter, R.drawable.ice_cream,
+    public Integer[] allDairy = {
+            R.drawable.butter, R.drawable.ice_cream, R.drawable.milk,
+            R.drawable.half_and_half, R.drawable.yogurt
 
     };
         public Integer[] cream = {
@@ -84,7 +85,7 @@ public class dairyAdp extends BaseAdapter {
             //milk
             "Milk can be stored in the fridge for 5 days after being opened",
             //half and half
-            "Half and half can be stored in the fridge for up to 10 days"
+            "Half and half can be stored in the fridge for up to 10 days",
             //yogurt
             "Yogurt can be kept in the fridge for up to 6 weeks unopened and 7 to 10 days after opening"
     };
