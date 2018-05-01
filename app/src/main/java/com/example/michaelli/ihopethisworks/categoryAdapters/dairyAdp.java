@@ -25,7 +25,20 @@ public class dairyAdp extends BaseAdapter {
     }
 
     public int getCount() {
-            return allDairy.length;
+        Integer[] category = allDairy;
+        switch (nav_sel){
+            case 0:category = allDairy;
+                break;
+            case 1:category = desserts;
+                break;
+            case 2:category = cream;
+                break;
+            case 3:category = desserts;
+                break;
+            case 4:category = desserts;
+                break;
+        }
+        return category.length;
     }
 
     public Object getItem(int position) {
