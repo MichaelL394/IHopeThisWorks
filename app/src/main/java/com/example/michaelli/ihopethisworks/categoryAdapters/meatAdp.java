@@ -53,7 +53,7 @@ public class meatAdp extends BaseAdapter {
 
     // Keep all Images in array
     public Integer[] mThumbIds = {
-            R.drawable.a, R.drawable.b,
+            R.drawable.lunch_meat, R.drawable.b,
             R.drawable.sample_2, R.drawable.sample_3,
             R.drawable.sample_4, R.drawable.sample_5,
             R.drawable.sample_6, R.drawable.sample_7,
@@ -69,7 +69,8 @@ public class meatAdp extends BaseAdapter {
 
     // example of skip line syntax ("elepant" + '\n' +"dog") or "cartos \n cats \n dog","drugos"
     public String[] two = {
-            "shark meat is an excellent source of cartilage \n will go bad in a few days",
+            //lunch meet aka shark skin
+            "Lunch meat can be stored in the fridge for up to two weeks in the fridge before opening. After the meat is opened it can be stored in the fridge for 3-5 days in the fridge. Lunch meats can be stored in the freezer indefinitely but should be eaten within 2 months for maximum freshness ",
             "Lizard meat goes great with salads after cooking and needs to be refrigerated",
             "cartos \n cats \n dog","drugos", "cat"
     };
