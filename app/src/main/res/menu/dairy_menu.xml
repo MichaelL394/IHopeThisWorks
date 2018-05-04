@@ -1,17 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="subcategories">
+        <menu>
+            <item
+                android:id="@+id/nav1"
+                android:title="desserts" />
+
+            <item
+                android:id="@+id/nav2"
+                android:title="cream" />
+            <item
+                android:id="@+id/nav3"
+                android:title="cheese" />
+            <item
+                android:id="@+id/nav4"
+                android:title="yogurt" />
+        </menu>
+    </item>
 
     <item
-        android:id="@+id/nav1"
-        android:title="desserts"/>
-
-    <item android:id="@+id/nav2"
-        android:title="cream"/>
-    <item
-        android:id="@+id/nav3"
-        android:title="cheese"/>
-    <item
-        android:id="@+id/nav4"
-        android:title="yogurt"/>
+        android:title="categories"
+        android:visible="true">
+        <menu>
+            <item
+                android:id="@+id/dairy"
+                android:title="dairy" />
+            <item
+                android:id="@+id/fruits"
+                android:title="fruits" />
+            <item
+                android:id="@+id/grains"
+                android:title="grains" />
+            <item
+                android:id="@+id/meats"
+                android:title="meats" />
+            <item
+                android:id="@+id/other"
+                android:title="other" />
+            <item
+                android:id="@+id/vegetables"
+                android:title="vegetables" />
+        </menu>
+    </item>
 
 </menu>

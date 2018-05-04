@@ -161,6 +161,14 @@ public class generalGrid extends AppCompatActivity {
                                 yogurt.putExtra("subType", 4);
                                 startActivity(yogurt);
                                 break;
+                            case R.id.dairy:
+                                Intent dairy = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "dairy";
+                                dairy.putExtra("STRING_SEND", strName);
+                                dairy.putExtra("foodType", 1);
+                                dairy.putExtra("subType", 4);
+                                startActivity(dairy);
+                                break;
 
                         }
                         return true;
