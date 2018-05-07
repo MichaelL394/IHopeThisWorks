@@ -53,15 +53,18 @@ public class meatAdp extends BaseAdapter {
 
     // Keep all Images in array
     public Integer[] mThumbIds = {
-            R.drawable.lunch_meat, R.drawable.b,
+            R.drawable.lunch_meat, R.drawable.pork,
+            R.drawable.hotdogs
     };
 
     // example of skip line syntax ("elepant" + '\n' +"dog") or "cartos \n cats \n dog","drugos"
     public String[] two = {
             //lunch meet aka shark skin
             "Lunch meat can be stored in the fridge for up to two weeks in the fridge before opening. After the meat is opened it can be stored in the fridge for 3-5 days in the fridge. Lunch meats can be stored in the freezer indefinitely but should be eaten within 2 months for maximum freshness ",
-            "Lizard meat goes great with salads after cooking and needs to be refrigerated",
-            "cartos \n cats \n dog","drugos", "cat"
+            //Pork
+            "For best quality, fresh pork roast, steaks, chops or ribs should be used within 4 - 6 months; fresh ground pork, pork liver or variety meats should be used within 3 - 4 months; and home cooked pork; soups, stews or casseroles within 2 - 3 months. After that they will still be safe but may lose quality or dry out.",
+           //Hot Dogs
+            "Packaged hot dogs can be stored in the refrigerator 2 weeks before opening. After opening a package of hot dogs you can keep them for a week in the refrigerator (40 °F/4.4 °C or less). These meats can also be frozen for 1 to 2 months for best quality. Frozen foods are safe indefinitely.", "cat"
     };
     public String[] three = {
             "staves","cartos","drugos",("elepant" + '\n' +
