@@ -42,7 +42,6 @@
             android:layout_height="100dp"
             android:background="@drawable/milk"
             android:onClick="dairy"
-            android:text="dairy"
             android:textColorHighlight="@color/textBackground"
             android:textColor="#000000"
             android:layout_marginTop="5dp" />
@@ -55,13 +54,14 @@
             android:layout_marginBottom="10dp"
             android:background="@color/toolTipBackground"
             android:textSize="18sp"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
             />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="100dp"
             android:background="@drawable/strawberries"
             android:onClick="fruits"
-            android:text="fruits"
             android:textColor="#000000" />
         <TextView
             android:layout_width="match_parent"
@@ -72,14 +72,14 @@
             android:layout_marginBottom="10dp"
             android:background="@color/toolTipBackground"
             android:textSize="18sp"
-
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
             />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="100dp"
             android:background="@drawable/breadthumb"
             android:onClick="grains"
-            android:text="grains"
             android:textColor="#000000"
             />
         <TextView
@@ -91,6 +91,8 @@
             android:layout_marginBottom="10dp"
             android:background="@color/toolTipBackground"
             android:textSize="18sp"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
             />
     </LinearLayout>
 
@@ -110,7 +112,6 @@
             android:layout_marginTop="5dp"
             android:background="@drawable/steak"
             android:onClick="goToMeatsAndBeans"
-            android:text="meats"
             android:textColor="#000000" />
         <TextView
             android:layout_width="match_parent"
@@ -121,6 +122,8 @@
             android:layout_marginBottom="10dp"
             android:background="@color/toolTipBackground"
             android:textSize="18sp"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
             />
 
         <Button
@@ -128,7 +131,6 @@
             android:layout_height="100dp"
             android:background="@drawable/candy"
             android:onClick="other"
-            android:text="other"
             android:textColor="#000000" />
         <TextView
             android:layout_width="match_parent"
@@ -139,13 +141,14 @@
             android:layout_marginBottom="10dp"
             android:background="@color/toolTipBackground"
             android:textSize="18sp"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
             />
         <Button
             android:background="@drawable/vegetables"
             android:layout_width="fill_parent"
             android:layout_height="100dp"
             android:onClick="vegetable"
-            android:text="vegetable"
             android:textColor="#000000"
             />
         <TextView
@@ -157,6 +160,8 @@
             android:layout_marginBottom="10dp"
             android:background="@color/toolTipBackground"
             android:textSize="18sp"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
             />
     </LinearLayout>
 

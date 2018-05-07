@@ -1,15 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/nav1"
-        android:title="dairy"/>
+    <item android:title="subcategories">
+        <menu>
+            <item
+                android:id="@+id/nav1"
+                android:title="Citrus" />
 
-    <item android:id="@+id/nav2"
-        android:title="fruit"/>
+            <item
+                android:id="@+id/nav2"
+                android:title="tropical" />
+            <item
+                android:id="@+id/nav3"
+                android:title="apples" />
+        </menu>
+    </item>
 
     <item
-        android:id="@+id/nav3"
-        android:title="grain"/>
+        android:title="categories"
+        android:visible="true">
+        <menu>
+            <item
+                android:id="@+id/dairy"
+                android:title="dairy" />
+            <item
+                android:id="@+id/fruits"
+                android:title="fruits" />
+            <item
+                android:id="@+id/grains"
+                android:title="grains" />
+            <item
+                android:id="@+id/meats"
+                android:title="meats" />
+            <item
+                android:id="@+id/other"
+                android:title="other" />
+            <item
+                android:id="@+id/vegetables"
+                android:title="vegetables" />
+        </menu>
+    </item>
 
 </menu>
