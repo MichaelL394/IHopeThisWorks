@@ -67,7 +67,7 @@ public class dairyAdp extends BaseAdapter {
         }
 // this calls which image in which array to use for each generated imageview button
         switch (nav_sel){
-            case 0:imageView.setImageResource(allDairy[position]);
+            case 0: imageView.setImageResource(allDairy[position]);
             break;
             case 1: imageView.setImageResource(desserts[position]);
             break;
