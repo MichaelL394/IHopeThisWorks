@@ -190,7 +190,7 @@ public class generalGrid extends AppCompatActivity {
                                 strName = "Meats";
                                 meats.putExtra("STRING_SEND", strName);
                                 meats.putExtra("foodType", 4);
-                                meats.putExtra("subType", 4);
+                                meats.putExtra("subType", 0);
                                 startActivity(meats);
                                 break;
                             case R.id.other:

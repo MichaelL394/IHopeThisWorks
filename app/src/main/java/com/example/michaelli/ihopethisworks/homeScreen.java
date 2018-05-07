@@ -120,7 +120,7 @@ public class homeScreen extends AppCompatActivity {
     /** goes to meats and beans section */
     public void goToMeatsAndBeans(View view) {
         Intent i = new Intent(this, generalGrid.class);
-        String strName = "meats and beans";
+        String strName = "meats";
         i.putExtra("STRING_SEND", strName);
         i.putExtra("foodType", 4);
         startActivity(i);
