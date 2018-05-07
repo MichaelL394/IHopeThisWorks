@@ -53,19 +53,19 @@ public class generalGrid extends AppCompatActivity {
                         header.setText(headerTitle);
                 break;
             case 2:  gridview.setAdapter(new fruitAdp(this));
-                        header.setText("Fruit");
+                        header.setText(headerTitle);
                 break;
             case 3:  gridview.setAdapter(new grainAdp(this));
-                        header.setText("Grain");
+                        header.setText(headerTitle);
                 break;
             case 4:  gridview.setAdapter(new meatAdp(this));
-                        header.setText("Meat");
+                        header.setText(headerTitle);
                 break;
             case 5:  gridview.setAdapter(new otherAdp(this));
-                        header.setText("Other");
+                        header.setText(headerTitle);
                 break;
             case 6:  gridview.setAdapter(new vegetablesAdp(this));
-                        header.setText("Vegetables");
+                        header.setText(headerTitle);
                 break;
             default: gridview.setAdapter(new meatAdp(this));
                 break;
@@ -166,8 +166,48 @@ public class generalGrid extends AppCompatActivity {
                                 strName = "dairy";
                                 dairy.putExtra("STRING_SEND", strName);
                                 dairy.putExtra("foodType", 1);
-                                dairy.putExtra("subType", 4);
+                                dairy.putExtra("subType", 0);
                                 startActivity(dairy);
+                                break;
+                            case R.id.fruits:
+                                Intent fruits = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "Fruits";
+                                fruits.putExtra("STRING_SEND", strName);
+                                fruits.putExtra("foodType", 2);
+                                fruits.putExtra("subType", 4);
+                                startActivity(fruits);
+                                break;
+                            case R.id.grains:
+                                Intent grains = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "Grains";
+                                grains.putExtra("STRING_SEND", strName);
+                                grains.putExtra("foodType", 3);
+                                grains.putExtra("subType", 4);
+                                startActivity(grains);
+                                break;
+                            case R.id.meats:
+                                Intent meats = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "Meats";
+                                meats.putExtra("STRING_SEND", strName);
+                                meats.putExtra("foodType", 4);
+                                meats.putExtra("subType", 4);
+                                startActivity(meats);
+                                break;
+                            case R.id.other:
+                                Intent other = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "other";
+                                other.putExtra("STRING_SEND", strName);
+                                other.putExtra("foodType", 5);
+                                other.putExtra("subType", 0);
+                                startActivity(other);
+                                break;
+                            case R.id.vegetables:
+                                Intent vegetables = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "Vegetables";
+                                vegetables.putExtra("STRING_SEND", strName);
+                                vegetables.putExtra("foodType", 6);
+                                vegetables.putExtra("subType", 4);
+                                startActivity(vegetables);
                                 break;
 
                         }
