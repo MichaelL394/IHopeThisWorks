@@ -13,13 +13,24 @@ import com.example.michaelli.ihopethisworks.R;
 public class fruitAdp extends BaseAdapter {
     private Context mContext;
 
+    int subCategory = 0;
     // Constructor
-    public fruitAdp(Context c) {
+    public fruitAdp(Context c, int subcategory) {
         mContext = c;
+        subCategory = subcategory;
     }
 
     public int getCount() {
-        return mThumbIds.length;
+        Integer[] category = allfruit;
+        switch (subCategory){
+            case 0:category = allfruit;
+                break;
+            case 1:category = citrus;
+                break;
+            case 2:category = tropical;
+                break;
+        }
+        return category.length;
     }
 
     public Object getItem(int position) {
@@ -45,12 +56,28 @@ public class fruitAdp extends BaseAdapter {
         {
             imageView = (ImageView) convertView;
         }
-        imageView.setImageResource(mThumbIds[position]);
+        switch (subCategory){
+            case 0: imageView.setImageResource(allfruit[position]);
+                break;
+            case 1: imageView.setImageResource(citrus[position]);
+                break;
+            case 2: imageView.setImageResource(tropical[position]);
+        }
         return imageView;
     }
 
     // Keep all Images in array
-    public Integer[] mThumbIds = {
+    public Integer[] allfruit = {
+            R.drawable.apples, R.drawable.bananas,
+            R.drawable.strawberries, R.drawable.tomatoes,
+            R.drawable.watermelons,
+    };
+    public Integer[] citrus = {
+            R.drawable.apples, R.drawable.bananas,
+            R.drawable.strawberries, R.drawable.tomatoes,
+            R.drawable.watermelons,
+    };
+    public Integer[] tropical = {
             R.drawable.apples, R.drawable.bananas,
             R.drawable.strawberries, R.drawable.tomatoes,
             R.drawable.watermelons,

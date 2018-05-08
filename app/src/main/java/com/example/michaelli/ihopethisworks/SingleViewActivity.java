@@ -50,19 +50,37 @@ public class SingleViewActivity extends AppCompatActivity {
                 case 4: imageView.setImageResource(dairy.allDairy[position]);
                     break;
             }
-
                 header.setText("dairy");
                 first.setText(dairy.two[position]);
+                imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             break;
-            case 2: fruitAdp fruit = new fruitAdp(this);
-                imageView.setImageResource(fruit.mThumbIds[position]);
+            case 2: fruitAdp fruit = new fruitAdp(this, subCategory);
+                switch(subCategory){
+                    case 0: imageView.setImageResource(fruit.allfruit[position]);
+                        break;
+                    case 1: imageView.setImageResource(fruit.citrus[position]);
+                        break;
+                    case 2: imageView.setImageResource(fruit.tropical[position]);
+                        break;
+                }
                 header.setText("fruit");
                 first.setText(fruit.two[position]);
                 break;
-            case 3: grainAdp grain = new grainAdp(this);
-                imageView.setImageResource(grain.mThumbIds[position]);
+            case 3: grainAdp grain = new grainAdp(this, subCategory);
+                switch(subCategory){
+                    case 0: imageView.setImageResource(grain.allgrain[position]);
+                        break;
+                    case 1: imageView.setImageResource(grain.dessertsGr[position]);
+                        break;
+                    case 2: imageView.setImageResource(grain.baked[position]);
+                        break;
+                    case 3: imageView.setImageResource(grain.oatsandcereal[position]);
+                        break;
+                }
                 header.setText("grain");
                 first.setText(grain.two[position]);
+                second.setText(grain.three[position]);
+                imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
                 break;
             case 4: meatAdp meat = new meatAdp(this);
                 imageView.setImageResource(meat.mThumbIds[position]);
@@ -123,21 +141,21 @@ public class SingleViewActivity extends AppCompatActivity {
                         int idOfMenuItem = Item.getItemId();
 
                         switch (idOfMenuItem) {
-                            case R.id.nav1:
+                            case R.id.desserts:
                                 Intent dairy = new Intent(getApplicationContext(), generalGrid.class);
                                 String strName = "dairy";
                                 dairy.putExtra("STRING_SEND", strName);
                                 dairy.putExtra("foodType", 1);
                                 startActivity(dairy);
                                 break;
-                            case R.id.nav2:
+                            case R.id.cream:
                                 Intent fruits = new Intent(getApplicationContext(), generalGrid.class);
                                 strName = "Fruits";
                                 fruits.putExtra("STRING_SEND", strName);
                                 fruits.putExtra("foodType", 2);
                                 startActivity(fruits);
                                 break;
-                            case R.id.nav3:
+                            case R.id.cheese:
                                 Intent grain = new Intent(getApplicationContext(), generalGrid.class);
                                 strName = "grains";
                                 grain.putExtra("STRING_SEND", strName);

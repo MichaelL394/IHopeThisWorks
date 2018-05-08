@@ -52,21 +52,21 @@ public class homeScreen extends AppCompatActivity {
                         int idOfMenuItem = Item.getItemId();
 
                         switch (idOfMenuItem) {
-                            case R.id.nav1:
+                            case R.id.desserts:
                                 Intent dairy = new Intent(getApplicationContext(), generalGrid.class);
                                 String strName = "dairy";
                                 dairy.putExtra("STRING_SEND", strName);
                                 dairy.putExtra("foodType", 1);
                                 startActivity(dairy);
                                 break;
-                            case R.id.nav2:
+                            case R.id.cream:
                                 Intent fruits = new Intent(getApplicationContext(), generalGrid.class);
                                 strName = "Fruits";
                                 fruits.putExtra("STRING_SEND", strName);
                                 fruits.putExtra("foodType", 2);
                                 startActivity(fruits);
                                 break;
-                            case R.id.nav3:
+                            case R.id.cheese:
                                 Intent grain = new Intent(getApplicationContext(), generalGrid.class);
                                 strName = "grains";
                                 grain.putExtra("STRING_SEND", strName);
