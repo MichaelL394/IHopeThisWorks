@@ -53,8 +53,8 @@ public class meatAdp extends BaseAdapter {
 
     // Keep all Images in array
     public Integer[] mThumbIds = {
-            R.drawable.lunch_meat, R.drawable.b,
-            R.drawable.a
+            R.drawable.lunch_meat, R.drawable.pork,
+            R.drawable.hotdog, R.drawable.corned_beef
     };
 
     // example of skip line syntax ("elepant" + '\n' +"dog") or "cartos \n cats \n dog","drugos"
@@ -64,7 +64,9 @@ public class meatAdp extends BaseAdapter {
             //Pork
             "For best quality, fresh pork roast, steaks, chops or ribs should be used within 4 - 6 months; fresh ground pork, pork liver or variety meats should be used within 3 - 4 months; and home cooked pork; soups, stews or casseroles within 2 - 3 months. After that they will still be safe but may lose quality or dry out.",
            //Hot Dogs
-            "Packaged hot dogs can be stored in the refrigerator 2 weeks before opening. After opening a package of hot dogs you can keep them for a week in the refrigerator (40 °F/4.4 °C or less). These meats can also be frozen for 1 to 2 months for best quality. Frozen foods are safe indefinitely.", "cat"
+            "Packaged hot dogs can be stored in the refrigerator 2 weeks before opening. After opening a package of hot dogs you can keep them for a week in the refrigerator (40 °F/4.4 °C or less). These meats can also be frozen for 1 to 2 months for best quality. Frozen foods are safe indefinitely.",
+            //COrned Beef
+            "Corned beef is made from one of several less tender cuts of beef like the brisket, rump or round. Therefore, it requires long, moist cooking. Corned beef is safe once the internal temperature has reached at least 145 °F (62.8 °C) with a three minute rest time, but cooking it longer will make it fork-tender. Corned beef may still be pink in color after cooking. This does not mean it is not done. Nitrite is used in the curing process. This fixes pigment in the meat and affects the color."
     };
     public String[] three = {
             "staves","cartos","drugos",("elepant" + '\n' +
