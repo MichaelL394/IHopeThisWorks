@@ -82,8 +82,19 @@ public class SingleViewActivity extends AppCompatActivity {
                 second.setText(grain.three[position]);
                 imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
                 break;
-            case 4: meatAdp meat = new meatAdp(this);
-                imageView.setImageResource(meat.mThumbIds[position]);
+            case 4: meatAdp meat = new meatAdp(this, subCategory);
+                switch(subCategory){
+                    case 0: imageView.setImageResource(meat.allmeat[position]);
+                        break;
+                    case 1: imageView.setImageResource(meat.processed[position]);
+                        break;
+                    case 2: imageView.setImageResource(meat.raw[position]);
+                        break;
+                    case 3: imageView.setImageResource(meat.mammal[position]);
+                        break;
+                    case 4: imageView.setImageResource(meat.othermeat[position]);
+                        break;
+                }
                 header.setText("meat");
                 first.setText(meat.two[position]);
                 break;

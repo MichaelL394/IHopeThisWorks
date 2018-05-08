@@ -56,7 +56,7 @@ public class generalGrid extends AppCompatActivity {
             case 3:  gridview.setAdapter(new grainAdp(this, subCategory));
                         header.setText(headerTitle);
                 break;
-            case 4:  gridview.setAdapter(new meatAdp(this));
+            case 4:  gridview.setAdapter(new meatAdp(this, subCategory));
                         header.setText(headerTitle);
                 break;
             case 5:  gridview.setAdapter(new otherAdp(this));
@@ -65,7 +65,7 @@ public class generalGrid extends AppCompatActivity {
             case 6:  gridview.setAdapter(new vegetablesAdp(this));
                         header.setText(headerTitle);
                 break;
-            default: gridview.setAdapter(new meatAdp(this));
+            default: gridview.setAdapter(new meatAdp(this, subCategory));
                 break;
         }
 
@@ -198,6 +198,38 @@ public class generalGrid extends AppCompatActivity {
                                 oatsandcereal.putExtra("foodType", 3);
                                 oatsandcereal.putExtra("subType", 3);
                                 startActivity(oatsandcereal);
+                                break;
+                            case R.id.processed:
+                                Intent processed = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "processed";
+                                processed.putExtra("STRING_SEND", strName);
+                                processed.putExtra("foodType", 3);
+                                processed.putExtra("subType", 3);
+                                startActivity(processed);
+                                break;
+                            case R.id.raw:
+                                Intent raw = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "raw";
+                                raw.putExtra("STRING_SEND", strName);
+                                raw.putExtra("foodType", 3);
+                                raw.putExtra("subType", 3);
+                                startActivity(raw);
+                                break;
+                            case R.id.mammal:
+                                Intent mammal = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "mammal";
+                                mammal.putExtra("STRING_SEND", strName);
+                                mammal.putExtra("foodType", 3);
+                                mammal.putExtra("subType", 3);
+                                startActivity(mammal);
+                                break;
+                            case R.id.othermeat:
+                                Intent othermeat = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "other meat";
+                                othermeat.putExtra("STRING_SEND", strName);
+                                othermeat.putExtra("foodType", 3);
+                                othermeat.putExtra("subType", 3);
+                                startActivity(othermeat);
                                 break;
 
                             case R.id.dairy:

@@ -111,7 +111,7 @@ public class homeScreen extends AppCompatActivity {
 
     public void grains(View view) {
         Intent i = new Intent(this, generalGrid.class);
-        String strName = "vegetables";
+        String strName = "grains";
         i.putExtra("STRING_SEND", strName);
         i.putExtra("foodType", 3);
         startActivity(i);
