@@ -23,8 +23,6 @@ import com.example.michaelli.ihopethisworks.categoryAdapters.meatAdp;
 import com.example.michaelli.ihopethisworks.categoryAdapters.otherAdp;
 import com.example.michaelli.ihopethisworks.categoryAdapters.vegetablesAdp;
 
-import org.w3c.dom.Text;
-
 public class generalGrid extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
@@ -52,10 +50,10 @@ public class generalGrid extends AppCompatActivity {
             case 1:  gridview.setAdapter(new dairyAdp(this, subCategory));
                         header.setText(headerTitle);
                 break;
-            case 2:  gridview.setAdapter(new fruitAdp(this));
+            case 2:  gridview.setAdapter(new fruitAdp(this, subCategory));
                         header.setText(headerTitle);
                 break;
-            case 3:  gridview.setAdapter(new grainAdp(this));
+            case 3:  gridview.setAdapter(new grainAdp(this, subCategory));
                         header.setText(headerTitle);
                 break;
             case 4:  gridview.setAdapter(new meatAdp(this));
@@ -129,7 +127,7 @@ public class generalGrid extends AppCompatActivity {
 
                     //sends the id of which category was chosen in nav bar and opens another gridview based on user choice
                         switch (idOfMenuItem) {
-                            case R.id.nav1:
+                            case R.id.desserts:
                                 Intent dessert = new Intent(getApplicationContext(), generalGrid.class);
                                 String strName = "desserts";
                                 dessert.putExtra("STRING_SEND", strName);
@@ -137,7 +135,7 @@ public class generalGrid extends AppCompatActivity {
                                 dessert.putExtra("subType", 1);
                                 startActivity(dessert);
                                 break;
-                            case R.id.nav2:
+                            case R.id.cream:
                                 Intent cream = new Intent(getApplicationContext(), generalGrid.class);
                                 strName = "cream";
                                 cream.putExtra("STRING_SEND", strName);
@@ -145,7 +143,7 @@ public class generalGrid extends AppCompatActivity {
                                 cream.putExtra("subType", 2);
                                 startActivity(cream);
                                 break;
-                            case R.id.nav3:
+                            case R.id.cheese:
                                 Intent cheese = new Intent(getApplicationContext(), generalGrid.class);
                                 strName = "cheese";
                                 cheese.putExtra("STRING_SEND", strName);
@@ -153,7 +151,7 @@ public class generalGrid extends AppCompatActivity {
                                 cheese.putExtra("subType", 3);
                                 startActivity(cheese);
                                 break;
-                            case R.id.nav4:
+                            case R.id.yogurt:
                                 Intent yogurt = new Intent(getApplicationContext(), generalGrid.class);
                                 strName = "yogurt";
                                 yogurt.putExtra("STRING_SEND", strName);
@@ -161,6 +159,47 @@ public class generalGrid extends AppCompatActivity {
                                 yogurt.putExtra("subType", 4);
                                 startActivity(yogurt);
                                 break;
+                            case R.id.Citrus:
+                                Intent Citrus = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "Citrus";
+                                Citrus.putExtra("STRING_SEND", strName);
+                                Citrus.putExtra("foodType", 2);
+                                Citrus.putExtra("subType", 1);
+                                startActivity(Citrus);
+                                break;
+                            case R.id.Tropical:
+                                Intent Tropical = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "Tropical";
+                                Tropical.putExtra("STRING_SEND", strName);
+                                Tropical.putExtra("foodType", 2);
+                                Tropical.putExtra("subType", 2);
+                                startActivity(Tropical);
+                                break;
+                            case R.id.dessertsGr:
+                                Intent dessertsGr = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "desserts";
+                                dessertsGr.putExtra("STRING_SEND", strName);
+                                dessertsGr.putExtra("foodType", 3);
+                                dessertsGr.putExtra("subType", 1);
+                                startActivity(dessertsGr);
+                                break;
+                            case R.id.baked:
+                                Intent baked = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "baked";
+                                baked.putExtra("STRING_SEND", strName);
+                                baked.putExtra("foodType", 3);
+                                baked.putExtra("subType", 2);
+                                startActivity(baked);
+                                break;
+                            case R.id.oatsandcereal:
+                                Intent oatsandcereal = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "Oats and Cereal";
+                                oatsandcereal.putExtra("STRING_SEND", strName);
+                                oatsandcereal.putExtra("foodType", 3);
+                                oatsandcereal.putExtra("subType", 3);
+                                startActivity(oatsandcereal);
+                                break;
+
                             case R.id.dairy:
                                 Intent dairy = new Intent(getApplicationContext(), generalGrid.class);
                                 strName = "dairy";
@@ -174,7 +213,7 @@ public class generalGrid extends AppCompatActivity {
                                 strName = "Fruits";
                                 fruits.putExtra("STRING_SEND", strName);
                                 fruits.putExtra("foodType", 2);
-                                fruits.putExtra("subType", 4);
+                                fruits.putExtra("subType", 0);
                                 startActivity(fruits);
                                 break;
                             case R.id.grains:
@@ -182,7 +221,7 @@ public class generalGrid extends AppCompatActivity {
                                 strName = "Grains";
                                 grains.putExtra("STRING_SEND", strName);
                                 grains.putExtra("foodType", 3);
-                                grains.putExtra("subType", 4);
+                                grains.putExtra("subType", 0);
                                 startActivity(grains);
                                 break;
                             case R.id.meats:
@@ -190,7 +229,7 @@ public class generalGrid extends AppCompatActivity {
                                 strName = "Meats";
                                 meats.putExtra("STRING_SEND", strName);
                                 meats.putExtra("foodType", 4);
-                                meats.putExtra("subType", 4);
+                                meats.putExtra("subType", 0);
                                 startActivity(meats);
                                 break;
                             case R.id.other:
@@ -206,7 +245,7 @@ public class generalGrid extends AppCompatActivity {
                                 strName = "Vegetables";
                                 vegetables.putExtra("STRING_SEND", strName);
                                 vegetables.putExtra("foodType", 6);
-                                vegetables.putExtra("subType", 4);
+                                vegetables.putExtra("subType", 0);
                                 startActivity(vegetables);
                                 break;
 

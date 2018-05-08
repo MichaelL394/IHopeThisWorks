@@ -4,17 +4,17 @@
     <item android:title="subcategories">
         <menu>
             <item
-                android:id="@+id/nav1"
+                android:id="@+id/desserts"
                 android:title="desserts" />
 
             <item
-                android:id="@+id/nav2"
+                android:id="@+id/cream"
                 android:title="cream" />
             <item
-                android:id="@+id/nav3"
+                android:id="@+id/cheese"
                 android:title="cheese" />
             <item
-                android:id="@+id/nav4"
+                android:id="@+id/yogurt"
                 android:title="yogurt" />
         </menu>
     </item>

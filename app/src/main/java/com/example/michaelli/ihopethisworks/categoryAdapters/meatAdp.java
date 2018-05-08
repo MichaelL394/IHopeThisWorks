@@ -53,8 +53,8 @@ public class meatAdp extends BaseAdapter {
 
     // Keep all Images in array
     public Integer[] mThumbIds = {
-            R.drawable.lunch_meat, R.drawable.pork,
-            R.drawable.hotdogs
+            R.drawable.lunch_meat, R.drawable.b,
+            R.drawable.a
     };
 
     // example of skip line syntax ("elepant" + '\n' +"dog") or "cartos \n cats \n dog","drugos"
