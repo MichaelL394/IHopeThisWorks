@@ -54,7 +54,8 @@ public class meatAdp extends BaseAdapter {
     // Keep all Images in array
     public Integer[] mThumbIds = {
             R.drawable.lunch_meat, R.drawable.pork,
-            R.drawable.hotdog, R.drawable.corned_beef
+            R.drawable.hotdog, R.drawable.corned_beef,
+            R.drawable.hamburger_patty, R.drawable.goat_chunks
     };
 
     // example of skip line syntax ("elepant" + '\n' +"dog") or "cartos \n cats \n dog","drugos"
@@ -66,7 +67,11 @@ public class meatAdp extends BaseAdapter {
            //Hot Dogs
             "Packaged hot dogs can be stored in the refrigerator 2 weeks before opening. After opening a package of hot dogs you can keep them for a week in the refrigerator (40 °F/4.4 °C or less). These meats can also be frozen for 1 to 2 months for best quality. Frozen foods are safe indefinitely.",
             //COrned Beef
-            "Corned beef is made from one of several less tender cuts of beef like the brisket, rump or round. Therefore, it requires long, moist cooking. Corned beef is safe once the internal temperature has reached at least 145 °F (62.8 °C) with a three minute rest time, but cooking it longer will make it fork-tender. Corned beef may still be pink in color after cooking. This does not mean it is not done. Nitrite is used in the curing process. This fixes pigment in the meat and affects the color."
+            "Corned beef is made from one of several less tender cuts of beef like the brisket, rump or round. Therefore, it requires long, moist cooking. Corned beef is safe once the internal temperature has reached at least 145 °F (62.8 °C) with a three minute rest time, but cooking it longer will make it fork-tender. Corned beef may still be pink in color after cooking. This does not mean it is not done. Nitrite is used in the curing process. This fixes pigment in the meat and affects the color.",
+            //Hamburger
+            "If ground beef is refrigerated promptly after cooking (within 2 hours; 1 hour if the temperature is above 90 °F (32.2 °C), it can be safely refrigerated for about 3 or 4 days. If frozen, it should keep its quality for about 4 months. When reheating fully cooked patties or casseroles containing ground beef, be sure the internal temperature reaches 165 °F (73.8 °C) or it is hot and steaming.",
+            //Goat Meat
+            "Store ground goat meat only 1 or 2 days in the refrigerator before either cooking or freezing it. Roasts, steaks and chops can be kept refrigerated 3 to 5 days before cooking. After cooking, keep refrigerated 3 to 4 days. For best quality, cooked meat and raw ground meat can be frozen and used within 3 to 4 months. Raw steaks, roasts and chops can be kept frozen 6 to 9 months. However, any frozen meat is safe indefinitely. Only the quality (flavor, texture, moistness) decreases during longer storage."
     };
     public String[] three = {
             "staves","cartos","drugos",("elepant" + '\n' +
