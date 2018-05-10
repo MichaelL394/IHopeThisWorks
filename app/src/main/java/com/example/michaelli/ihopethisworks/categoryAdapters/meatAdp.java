@@ -2,7 +2,6 @@ package com.example.michaelli.ihopethisworks.categoryAdapters;
 
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -14,14 +13,29 @@ import com.example.michaelli.ihopethisworks.R;
 
 public class meatAdp extends BaseAdapter {
     private Context mContext;
+    int recievesub = 0;
 
     // Constructor
-    public meatAdp(Context c) {
+    public meatAdp(Context c, int subCategory) {
         mContext = c;
+        recievesub = subCategory;
     }
 
     public int getCount() {
-        return mThumbIds.length;
+        Integer[] category = allmeat;
+        switch (recievesub){
+            case 0:category = allmeat;
+                break;
+            case 1:category = processed;
+                break;
+            case 2:category = raw;
+                break;
+            case 3:category = mammal;
+                break;
+            case 4:category = othermeat;
+                break;
+        }
+        return category.length;
     }
 
     public Object getItem(int position) {
@@ -47,15 +61,42 @@ public class meatAdp extends BaseAdapter {
         {
             imageView = (ImageView) convertView;
         }
-        imageView.setImageResource(mThumbIds[position]);
+        switch (recievesub){
+            case 0: imageView.setImageResource(allmeat[position]);
+                break;
+            case 1: imageView.setImageResource(processed[position]);
+                break;
+            case 2: imageView.setImageResource(raw[position]);
+                break;
+            case 3: imageView.setImageResource(mammal[position]);
+                break;
+            case 4: imageView.setImageResource(othermeat[position]);
+                break;
+        }
         return imageView;
     }
 
     // Keep all Images in array
-    public Integer[] mThumbIds = {
+    public Integer[] allmeat = {
             R.drawable.lunch_meat, R.drawable.pork,
             R.drawable.hotdog, R.drawable.corned_beef,
             R.drawable.hamburger_patty, R.drawable.goat_chunks
+    };
+    public Integer[] processed = {
+            R.drawable.lunch_meat, R.drawable.b,
+            R.drawable.a
+    };
+    public Integer[] raw = {
+            R.drawable.lunch_meat, R.drawable.b,
+            R.drawable.a
+    };
+    public Integer[] mammal = {
+            R.drawable.lunch_meat, R.drawable.b,
+            R.drawable.a
+    };
+    public Integer[] othermeat = {
+            R.drawable.lunch_meat, R.drawable.b,
+            R.drawable.a
     };
 
     // example of skip line syntax ("elepant" + '\n' +"dog") or "cartos \n cats \n dog","drugos"
