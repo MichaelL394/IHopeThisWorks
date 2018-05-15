@@ -51,8 +51,7 @@ public class vegetablesAdp extends BaseAdapter {
 
     // Keep all Images in array
     public Integer[] mThumbIds = {
-            R.drawable.artichoke, R.drawable.b,
-            R.drawable.b, R.drawable.d,
+            R.drawable.artichoke, R.drawable.broccoli
     };
 
 
@@ -60,8 +59,8 @@ public class vegetablesAdp extends BaseAdapter {
     public String[] two = {
            //artichoke
             "Artichokes should be stored in the fridge in a moisture rich environment. ",
-            "cartos \n cats \n dog","drugos",("elepant" + '\n' +
-            "dog"), "cat"
+            //broccoli
+            "Broccoli should be stored loosely in the fridge, inside the crisper drawer, wrapped in a damp towel. Broccoli can be blanched and put in the freezer in an airtight container."
     };
     public String[] three = {
             "staves","cartos","drugos",("elepant" + '\n' +
