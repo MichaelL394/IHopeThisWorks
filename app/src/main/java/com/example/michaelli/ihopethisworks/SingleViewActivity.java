@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.michaelli.ihopethisworks.categoryAdapters.*;
@@ -41,9 +42,9 @@ public class SingleViewActivity extends AppCompatActivity {
             switch(subCategory){
                 case 0: imageView.setImageResource(dairy.allDairy[position]);
                     break;
-                case 1: imageView.setImageResource(dairy.cream[position]);
+                case 1: imageView.setImageResource(dairy.desserts[position]);
                     break;
-                case 2: imageView.setImageResource(dairy.allDairy[position]);
+                case 2: imageView.setImageResource(dairy.cream[position]);
                     break;
                 case 3: imageView.setImageResource(dairy.allDairy[position]);
                     break;
@@ -80,7 +81,6 @@ public class SingleViewActivity extends AppCompatActivity {
                 header.setText("grain");
                 first.setText(grain.two[position]);
                 second.setText(grain.three[position]);
-                imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
                 break;
             case 4: meatAdp meat = new meatAdp(this, subCategory);
                 switch(subCategory){
@@ -141,7 +141,7 @@ public class SingleViewActivity extends AppCompatActivity {
 
         //navigation user selection handler
         navigationView.setNavigationItemSelectedListener(
-                new NavigationView.OnNavigationItemSelectedListener() {
+                new android.support.design.widget.NavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem Item) {
                         // set item as selected to persist highlight
@@ -151,36 +151,168 @@ public class SingleViewActivity extends AppCompatActivity {
 
                         int idOfMenuItem = Item.getItemId();
 
+                        //sends the id of which category was chosen in nav bar and opens another gridview based on user choice
                         switch (idOfMenuItem) {
                             case R.id.desserts:
-                                Intent dairy = new Intent(getApplicationContext(), generalGrid.class);
-                                String strName = "dairy";
-                                dairy.putExtra("STRING_SEND", strName);
-                                dairy.putExtra("foodType", 1);
-                                startActivity(dairy);
+                                Intent dessert = new Intent(getApplicationContext(), generalGrid.class);
+                                String strName = "desserts";
+                                dessert.putExtra("STRING_SEND", strName);
+                                dessert.putExtra("foodType", 1);
+                                dessert.putExtra("subType", 1);
+                                startActivity(dessert);
                                 break;
                             case R.id.cream:
+                                Intent cream = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "cream";
+                                cream.putExtra("STRING_SEND", strName);
+                                cream.putExtra("foodType", 1);
+                                cream.putExtra("subType", 2);
+                                startActivity(cream);
+                                break;
+                            case R.id.cheese:
+                                Intent cheese = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "cheese";
+                                cheese.putExtra("STRING_SEND", strName);
+                                cheese.putExtra("foodType", 1);
+                                cheese.putExtra("subType", 3);
+                                startActivity(cheese);
+                                break;
+                            case R.id.yogurt:
+                                Intent yogurt = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "yogurt";
+                                yogurt.putExtra("STRING_SEND", strName);
+                                yogurt.putExtra("foodType", 1);
+                                yogurt.putExtra("subType", 4);
+                                startActivity(yogurt);
+                                break;
+                            case R.id.Citrus:
+                                Intent Citrus = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "Citrus";
+                                Citrus.putExtra("STRING_SEND", strName);
+                                Citrus.putExtra("foodType", 2);
+                                Citrus.putExtra("subType", 1);
+                                startActivity(Citrus);
+                                break;
+                            case R.id.Tropical:
+                                Intent Tropical = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "Tropical";
+                                Tropical.putExtra("STRING_SEND", strName);
+                                Tropical.putExtra("foodType", 2);
+                                Tropical.putExtra("subType", 2);
+                                startActivity(Tropical);
+                                break;
+                            case R.id.dessertsGr:
+                                Intent dessertsGr = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "desserts";
+                                dessertsGr.putExtra("STRING_SEND", strName);
+                                dessertsGr.putExtra("foodType", 3);
+                                dessertsGr.putExtra("subType", 1);
+                                startActivity(dessertsGr);
+                                break;
+                            case R.id.baked:
+                                Intent baked = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "baked";
+                                baked.putExtra("STRING_SEND", strName);
+                                baked.putExtra("foodType", 3);
+                                baked.putExtra("subType", 2);
+                                startActivity(baked);
+                                break;
+                            case R.id.oatsandcereal:
+                                Intent oatsandcereal = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "Oats and Cereal";
+                                oatsandcereal.putExtra("STRING_SEND", strName);
+                                oatsandcereal.putExtra("foodType", 3);
+                                oatsandcereal.putExtra("subType", 3);
+                                startActivity(oatsandcereal);
+                                break;
+                            case R.id.processed:
+                                Intent processed = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "processed";
+                                processed.putExtra("STRING_SEND", strName);
+                                processed.putExtra("foodType", 3);
+                                processed.putExtra("subType", 3);
+                                startActivity(processed);
+                                break;
+                            case R.id.raw:
+                                Intent raw = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "raw";
+                                raw.putExtra("STRING_SEND", strName);
+                                raw.putExtra("foodType", 3);
+                                raw.putExtra("subType", 3);
+                                startActivity(raw);
+                                break;
+                            case R.id.mammal:
+                                Intent mammal = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "mammal";
+                                mammal.putExtra("STRING_SEND", strName);
+                                mammal.putExtra("foodType", 3);
+                                mammal.putExtra("subType", 3);
+                                startActivity(mammal);
+                                break;
+                            case R.id.othermeat:
+                                Intent othermeat = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "other meat";
+                                othermeat.putExtra("STRING_SEND", strName);
+                                othermeat.putExtra("foodType", 3);
+                                othermeat.putExtra("subType", 3);
+                                startActivity(othermeat);
+                                break;
+
+                            case R.id.dairy:
+                                Intent dairy = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "dairy";
+                                dairy.putExtra("STRING_SEND", strName);
+                                dairy.putExtra("foodType", 1);
+                                dairy.putExtra("subType", 0);
+                                startActivity(dairy);
+                                break;
+                            case R.id.fruits:
                                 Intent fruits = new Intent(getApplicationContext(), generalGrid.class);
                                 strName = "Fruits";
                                 fruits.putExtra("STRING_SEND", strName);
                                 fruits.putExtra("foodType", 2);
+                                fruits.putExtra("subType", 0);
                                 startActivity(fruits);
                                 break;
-                            case R.id.cheese:
-                                Intent grain = new Intent(getApplicationContext(), generalGrid.class);
-                                strName = "grains";
-                                grain.putExtra("STRING_SEND", strName);
-                                grain.putExtra("foodType", 3);
-                                startActivity(grain);
+                            case R.id.grains:
+                                Intent grains = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "Grains";
+                                grains.putExtra("STRING_SEND", strName);
+                                grains.putExtra("foodType", 3);
+                                grains.putExtra("subType", 0);
+                                startActivity(grains);
                                 break;
-
-
+                            case R.id.meats:
+                                Intent meats = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "Meats";
+                                meats.putExtra("STRING_SEND", strName);
+                                meats.putExtra("foodType", 4);
+                                meats.putExtra("subType", 0);
+                                startActivity(meats);
+                                break;
+                            case R.id.other:
+                                Intent other = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "other";
+                                other.putExtra("STRING_SEND", strName);
+                                other.putExtra("foodType", 5);
+                                other.putExtra("subType", 0);
+                                startActivity(other);
+                                break;
+                            case R.id.vegetables:
+                                Intent vegetables = new Intent(getApplicationContext(), generalGrid.class);
+                                strName = "Vegetables";
+                                vegetables.putExtra("STRING_SEND", strName);
+                                vegetables.putExtra("foodType", 6);
+                                vegetables.putExtra("subType", 0);
+                                startActivity(vegetables);
+                                break;
 
                         }
                         return true;
                     }
                 });
     }
+
     //below is for pullout navigation menu hamburger button
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

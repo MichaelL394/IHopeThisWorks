@@ -13,7 +13,7 @@ import com.example.michaelli.ihopethisworks.R;
 
 public class meatAdp extends BaseAdapter {
     private Context mContext;
-    int recievesub = 0;
+    private int recievesub = 0;
 
     // Constructor
     public meatAdp(Context c, int subCategory) {
@@ -53,9 +53,8 @@ public class meatAdp extends BaseAdapter {
 
         if (convertView == null) {
             imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(300, 300));
+            imageView.setLayoutParams(new GridView.LayoutParams(330, 330));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setPadding(8, 8, 8, 8);
         }
         else
         {
