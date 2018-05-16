@@ -26,7 +26,8 @@
         android:scaleType="centerInside"
         android:adjustViewBounds="true"
         android:layout_height="wrap_content"
-        android:layout_gravity="center|top" />
+        android:layout_gravity="center|top"
+        />
      <TextView
          android:id="@+id/textSingleView1"
          android:layout_width="wrap_content"

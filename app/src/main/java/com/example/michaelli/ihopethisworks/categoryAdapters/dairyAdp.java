@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.michaelli.ihopethisworks.R;
 
@@ -53,10 +54,12 @@ public class dairyAdp extends BaseAdapter {
     // create new ImageViews in grid based on (selected array here).length or number of items in selected array
     public View getView(int position, View convertView, ViewGroup parent) {
         ImageView imageView;
+        TextView textv;
 
 
         if (convertView == null) {
             imageView = new ImageView(mContext);
+            textv = new TextView(mContext);
             imageView.setLayoutParams(new GridView.LayoutParams(350, 350));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setPadding(8, 8, 8, 8);
