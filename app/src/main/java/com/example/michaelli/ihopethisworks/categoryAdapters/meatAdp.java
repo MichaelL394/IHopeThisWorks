@@ -72,7 +72,7 @@ public class meatAdp extends BaseAdapter {
             imageView = container.findViewById(R.id.grid_image);
 
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            tV.setText("cow");
+
             switch (recievesub){
                 case 0: imageView.setImageResource(allmeat[position]);
                     break;
@@ -84,6 +84,12 @@ public class meatAdp extends BaseAdapter {
                     break;
                 case 4: imageView.setImageResource(othermeat[position]);
                     break;
+            }
+            switch(recievesub){
+                case 0: tV.setText(three[position]);
+                break;
+                default:tV.setText(three[position]);
+                break;
             }
         }
         else
@@ -134,8 +140,7 @@ public class meatAdp extends BaseAdapter {
             "Store ground goat meat only 1 or 2 days in the refrigerator before either cooking or freezing it. Roasts, steaks and chops can be kept refrigerated 3 to 5 days before cooking. After cooking, keep refrigerated 3 to 4 days. For best quality, cooked meat and raw ground meat can be frozen and used within 3 to 4 months. Raw steaks, roasts and chops can be kept frozen 6 to 9 months. However, any frozen meat is safe indefinitely. Only the quality (flavor, texture, moistness) decreases during longer storage."
     };
     public String[] three = {
-            "staves","cartos","drugos",("elepant" + '\n' +
-            "dog"), "cat", "dog"
+            "lunchmeat", "pork","hotdogs","cornedbeef","Hamburger","Goat Meat",
     };
 
 }

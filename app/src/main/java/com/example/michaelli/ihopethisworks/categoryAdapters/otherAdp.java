@@ -2,11 +2,13 @@ package com.example.michaelli.ihopethisworks.categoryAdapters;
 
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.michaelli.ihopethisworks.R;
 
@@ -32,14 +34,23 @@ public class otherAdp extends BaseAdapter {
 
     // create a new ImageView for each item referenced by the Adapter
     public View getView(int position, View convertView, ViewGroup parent) {
+        LayoutInflater inflater = (LayoutInflater) mContext
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        View container;
         ImageView imageView;
+        TextView tV;
 
 
         if (convertView == null) {
-            imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(350, 350));
+            container = new View(mContext);
+            container = inflater.inflate(R.layout.grid_organize, null);
+
+            tV = container.findViewById(R.id.grid_text);
+
+            imageView = container.findViewById(R.id.grid_image);
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setPadding(8, 8, 8, 8);
+            tV.setText("cow");
         }
         else
         {
