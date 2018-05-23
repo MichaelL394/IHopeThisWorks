@@ -49,12 +49,6 @@ public class meatAdp extends BaseAdapter {
         return 0;
     }
 
-    public class Holder
-    {
-        TextView tV;
-        ImageView imageView;
-    }
-
     // create a new ImageView for each item referenced by the Adapter
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) mContext
@@ -63,7 +57,7 @@ public class meatAdp extends BaseAdapter {
         View container;
         ImageView imageView;
         TextView tV;
-
+//if view doesn't exist (null) then a view is created
         if (convertView == null) {
             container = new View(mContext);
             container = inflater.inflate(R.layout.grid_organize, null);
@@ -94,10 +88,11 @@ public class meatAdp extends BaseAdapter {
         }
         else
         {
-            container = (View) convertView;
+            container = convertView;
         }
 
         return
+                //this return sends the view data to the gridview to display to the user
                 container;
     }
 

@@ -2,6 +2,7 @@ package com.example.michaelli.ihopethisworks.categoryAdapters;
 
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -53,31 +54,44 @@ public class dairyAdp extends BaseAdapter {
 
     // create new ImageViews in grid based on (selected array here).length or number of items in selected array
     public View getView(int position, View convertView, ViewGroup parent) {
-        ImageView imageView;
-        TextView textv;
+        LayoutInflater inflater = (LayoutInflater) mContext
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
+        View container;
+        ImageView imageView;
+        TextView tV;
 
         if (convertView == null) {
-            imageView = new ImageView(mContext);
-            textv = new TextView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(350, 350));
+            container = new View(mContext);
+            container = inflater.inflate(R.layout.grid_organize, null);
+
+            tV = container.findViewById(R.id.grid_text);
+            imageView = container.findViewById(R.id.grid_image);
+
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setPadding(8, 8, 8, 8);
-        }
-        else
-        {
-            imageView = (ImageView) convertView;
-        }
-// this calls which image in which array to use for each generated imageview button
-        switch (nav_sel){
-            case 0: imageView.setImageResource(allDairy[position]);
-            break;
-            case 1: imageView.setImageResource(desserts[position]);
-            break;
-            case 2: imageView.setImageResource(cream[position]);
+
+            tV.setText(three[position]);
+
+            switch (nav_sel) {
+                case 0:
+                    imageView.setImageResource(allDairy[position]);
+                    break;
+                case 1:
+                    imageView.setImageResource(desserts[position]);
+                    break;
+                case 2:
+                    imageView.setImageResource(cream[position]);
+            }
         }
 
-        return imageView;
+        else
+        {
+            container = convertView;
+        }
+// this calls which image in which array to use for each generated imageview button
+
+
+        return container;
     }
 
     // Keep all Images in array
@@ -111,8 +125,7 @@ public class dairyAdp extends BaseAdapter {
             "Yogurt can be kept in the fridge for up to 6 weeks unopened and 7 to 10 days after opening"
     };
     public String[] three = {
-            "staves","cartos","drugos",("elepant" + '\n' +
-            "dog"), "cat", "dog"
+            "butter","Ice Cream","milk","half&half", "yogurt",
     };
 
 }
