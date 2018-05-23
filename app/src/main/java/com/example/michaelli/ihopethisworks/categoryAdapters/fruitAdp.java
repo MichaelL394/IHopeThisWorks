@@ -85,8 +85,10 @@ public class fruitAdp extends BaseAdapter {
 
 
     public String[] two = {
-           "drugs","cartos \n cats \n dog","drugos",("elepant" + '\n' +
-            "dog"), "cat"
+           //Apples
+            "Apples should be stored in the fridge away from other fruits and produce. A single bruised apple can shorten the shelf life of other fruits stored with it; so remember to eat bruised apples first.",
+            //banana
+            "Banana should be stored on the counter loose. Bananas also give off ethylene gas, which speeds ripening in other produce. Freezing bananas can be used to further extend shelf life."
     };
     public String[] three = {
             "staves","cartos","drugos",("elepant" + '\n' +
